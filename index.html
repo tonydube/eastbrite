@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eastbrite — Digital Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Poppins:wght@100;200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="scene">
+      <div class="sun" aria-hidden="true"></div>
+      <div class="cliff-left" aria-hidden="true"></div>
+      <div class="cliff-right" aria-hidden="true"></div>
+
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="brand">Eastbrite</div>
+          <div class="agency-pill">
+            <span class="dot"></span>
+            Digital Agency
+          </div>
+        </div>
+
+        <nav class="main-nav" id="primary-nav" aria-label="Primary">
+          <a href="#">Services</a>
+          <a href="#">Work</a>
+          <a href="#">About</a>
+          <a href="#">Insights</a>
+          <a href="#">Careers</a>
+        </nav>
+
+        <div class="top-actions">
+          <button class="talk-btn">Let's Talk</button>
+          <button
+            class="menu-btn"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="primary-nav"
+            type="button"
+          >
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </header>
+
+      <main class="hero">
+        <section class="hero-copy" aria-label="Hero content">
+          <div class="agency-pill hero-agency-pill">
+            <span class="dot"></span>
+            Digital Agency
+          </div>
+          <p>We craft digital experiences<br />that move brands forward.</p>
+          <div class="tags">
+            DESIGN <span>•</span> TECHNOLOGY <span>•</span> GROWTH
+          </div>
+          <button class="primary-cta">
+            <span>Start a Project</span>
+            <span class="cta-arrow">→</span>
+          </button>
+        </section>
+
+        <!--
+        <aside class="stats-glass" aria-label="Business highlights">
+          <div class="stat-item">
+            <div class="stat-icon">◌</div>
+            <div class="stat-value">120+</div>
+            <div class="stat-label">Projects<br />Delivered</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon">✶</div>
+            <div class="stat-value">98%</div>
+            <div class="stat-label">Client<br />Satisfaction</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon">⚡</div>
+            <div class="stat-value">10+</div>
+            <div class="stat-label">Industries<br />Empowered</div>
+          </div>
+        </aside>
+        -->
+      </main>
+
+      <section
+        class="feature-row"
+        id="cards-start"
+        aria-label="Featured service overview"
+      >
+        <article class="card approach-card">
+          <div class="card-kicker"><span class="dot"></span>Our Approach</div>
+          <h2>Strategy meets<br />creativity.</h2>
+          <p>
+            We blend human insight with cutting-edge technology to build digital
+            products that inspire and perform.
+          </p>
+          <button class="circle-action" aria-label="Learn more">→</button>
+        </article>
+
+        <article class="card services-card">
+          <div class="card-top">
+            <div class="card-kicker"><span class="dot"></span>What We Do</div>
+            <a class="view-all" href="#">View All <span>→</span></a>
+          </div>
+
+          <h2>End-to-end digital<br />solutions.</h2>
+
+          <div class="service-grid">
+            <div class="service-item">
+              <span class="service-icon">⬡</span>Brand Strategy
+            </div>
+            <div class="service-item">
+              <span class="service-icon">◎</span>UI/UX Design
+            </div>
+            <div class="service-item">
+              <span class="service-icon">&lt;/&gt;</span>Web Development
+            </div>
+            <div class="service-item">
+              <span class="service-icon">↗</span>Digital Growth
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="trusted" aria-label="Trusted brands">
+        <div class="trusted-label">TRUSTED BY INNOVATIVE BRANDS WORLDWIDE</div>
+        <div class="logo-row">
+          <span class="logo-netlify">netlify</span>
+          <span class="logo-microsoft">Microsoft</span>
+          <span class="logo-google">Google</span>
+          <span class="logo-airbnb">airbnb</span>
+          <span class="logo-hubspot">HubSpot</span>
+          <span class="logo-slack">slack</span>
+          <span class="logo-amazon">amazon</span>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      const menuButton = document.querySelector(".menu-btn");
+      const primaryNav = document.getElementById("primary-nav");
+      const pageBody = document.body;
+
+      if (menuButton && primaryNav) {
+        const closeMobileMenu = () => {
+          menuButton.setAttribute("aria-expanded", "false");
+          menuButton.setAttribute("aria-label", "Open menu");
+          menuButton.classList.remove("is-open");
+          primaryNav.classList.remove("is-open");
+          pageBody.classList.remove("menu-open");
+        };
+
+        menuButton.addEventListener("click", () => {
+          const isExpanded =
+            menuButton.getAttribute("aria-expanded") === "true";
+          const nextExpanded = !isExpanded;
+
+          menuButton.setAttribute("aria-expanded", String(nextExpanded));
+          menuButton.setAttribute(
+            "aria-label",
+            nextExpanded ? "Close menu" : "Open menu",
+          );
+          menuButton.classList.toggle("is-open", nextExpanded);
+          primaryNav.classList.toggle("is-open", nextExpanded);
+          pageBody.classList.toggle("menu-open", nextExpanded);
+        });
+
+        primaryNav.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", closeMobileMenu);
+        });
+
+        window.addEventListener("resize", () => {
+          if (window.innerWidth > 768) {
+            closeMobileMenu();
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
