@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Poppins:wght@100;200;300;400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
     <div class="scene">
@@ -28,11 +28,9 @@
         </div>
 
         <nav class="main-nav" id="primary-nav" aria-label="Primary">
-          <a href="#">Services</a>
-          <a href="#">Work</a>
-          <a href="#">About</a>
-          <a href="#">Insights</a>
-          <a href="#">Careers</a>
+          <a href="#about">About</a>
+          <a href="#work">Work</a>
+          <a href="#services">Services</a>
         </nav>
 
         <div class="top-actions">
@@ -56,7 +54,7 @@
             <span class="dot"></span>
             Digital Agency
           </div>
-          <p>We craft digital experiences<br />that move brands forward.</p>
+          <p>We craft digital experiences that move brands forward.</p>
           <div class="tags">
             DESIGN <span>•</span> TECHNOLOGY <span>•</span> GROWTH
           </div>
@@ -141,45 +139,328 @@
       </section>
     </div>
 
-    <script>
-      const menuButton = document.querySelector(".menu-btn");
-      const primaryNav = document.getElementById("primary-nav");
-      const pageBody = document.body;
+    <div class="lower-content">
+      <section class="about-section" id="about" aria-label="About Eastbrite">
+        <div class="about-top">
+          <div class="about-left">
+            <p class="about-kicker">ABOUT US</p>
+            <h2 class="about-title">About Eastbrite<br />Digital Agency</h2>
+            <div class="about-divider" aria-hidden="true">
+              <span></span>
+              <span></span>
+            </div>
+            <p class="about-lead">
+              Eastbrite is a forward-thinking digital agency helping ambitious
+              brands grow in a connected world.
+            </p>
+          </div>
 
-      if (menuButton && primaryNav) {
-        const closeMobileMenu = () => {
-          menuButton.setAttribute("aria-expanded", "false");
-          menuButton.setAttribute("aria-label", "Open menu");
-          menuButton.classList.remove("is-open");
-          primaryNav.classList.remove("is-open");
-          pageBody.classList.remove("menu-open");
-        };
+          <div class="about-copy">
+            <p>
+              We combine creativity, strategy, and technology to build digital
+              experiences that don't just look great, they deliver results.
+            </p>
+            <p>
+              From startups to established enterprises, we partner with
+              businesses to solve real challenges, unlock new opportunities, and
+              drive meaningful growth.
+            </p>
+            <p>
+              Our team of designers, developers, and strategists are passionate
+              about innovation and committed to turning ideas into impactful
+              digital solutions.
+            </p>
+          </div>
+        </div>
 
-        menuButton.addEventListener("click", () => {
-          const isExpanded =
-            menuButton.getAttribute("aria-expanded") === "true";
-          const nextExpanded = !isExpanded;
+        <div class="about-values" aria-label="About highlights">
+          <article class="about-value">
+            <div class="about-value-icon" aria-hidden="true">⌁</div>
+            <h3>Trusted Partner</h3>
+            <p>
+              We build long-term relationships based on trust, transparency, and
+              shared success.
+            </p>
+          </article>
 
-          menuButton.setAttribute("aria-expanded", String(nextExpanded));
-          menuButton.setAttribute(
-            "aria-label",
-            nextExpanded ? "Close menu" : "Open menu",
-          );
-          menuButton.classList.toggle("is-open", nextExpanded);
-          primaryNav.classList.toggle("is-open", nextExpanded);
-          pageBody.classList.toggle("menu-open", nextExpanded);
-        });
+          <article class="about-value">
+            <div class="about-value-icon" aria-hidden="true">✦</div>
+            <h3>Creative Excellence</h3>
+            <p>
+              We design with purpose and craft experiences that engage and
+              inspire.
+            </p>
+          </article>
 
-        primaryNav.querySelectorAll("a").forEach((link) => {
-          link.addEventListener("click", closeMobileMenu);
-        });
+          <article class="about-value">
+            <div class="about-value-icon" aria-hidden="true">&lt;/&gt;</div>
+            <h3>Tech-Driven Solutions</h3>
+            <p>
+              We leverage the latest tools and technologies to build scalable
+              and future-ready solutions.
+            </p>
+          </article>
 
-        window.addEventListener("resize", () => {
-          if (window.innerWidth > 768) {
-            closeMobileMenu();
-          }
-        });
-      }
-    </script>
+          <article class="about-value">
+            <div class="about-value-icon" aria-hidden="true">↗</div>
+            <h3>Results That Matter</h3>
+            <p>
+              We focus on what drives growth, measurable outcomes that move your
+              business forward.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="content-section work-section"
+        id="work"
+        aria-label="Selected work"
+      >
+        <div class="work-head">
+          <div>
+            <p class="work-kicker">OUR WORK</p>
+            <h2 class="work-heading">
+              Selected collaborations<br />and measurable wins.
+            </h2>
+          </div>
+          <a class="work-view-all" href="#"
+            >View all work <span class="work-arrow">→</span></a
+          >
+        </div>
+
+        <div class="work-cards">
+          <article class="work-card work-card--featured">
+            <div class="work-mock work-mock--fintech">
+              <div class="mock-chrome">
+                <span class="mock-dot"></span><span class="mock-dot"></span
+                ><span class="mock-dot"></span>
+                <div class="mock-urlbar"></div>
+              </div>
+              <div class="mock-canvas">
+                <div class="mock-sidebar">
+                  <div class="mock-block"></div>
+                  <div class="mock-block mock-block--sm"></div>
+                  <div class="mock-block mock-block--sm"></div>
+                  <div class="mock-block mock-block--sm"></div>
+                </div>
+                <div class="mock-content">
+                  <div class="mock-block mock-block--header"></div>
+                  <div class="mock-block mock-block--body"></div>
+                  <div class="mock-row">
+                    <div class="mock-block mock-block--half"></div>
+                    <div class="mock-block mock-block--half"></div>
+                  </div>
+                  <div class="mock-block mock-block--btn"></div>
+                </div>
+              </div>
+            </div>
+            <div class="work-info">
+              <p class="work-tag">Product Design + Development</p>
+              <h3>Fintech onboarding redesign</h3>
+              <p>
+                Reduced signup drop-off by 37% through clearer UX flows and
+                faster load times.
+              </p>
+              <div class="work-metric"><em>37%</em> drop-off reduction</div>
+            </div>
+          </article>
+
+          <div class="work-col">
+            <article class="work-card">
+              <div class="work-mock work-mock--hospitality">
+                <div class="mock-chrome">
+                  <span class="mock-dot"></span><span class="mock-dot"></span
+                  ><span class="mock-dot"></span>
+                  <div class="mock-urlbar"></div>
+                </div>
+                <div class="mock-canvas mock-canvas--hero">
+                  <div class="mock-hero-band"></div>
+                  <div class="mock-block mock-block--heading"></div>
+                  <div class="mock-3col">
+                    <div class="mock-img-card"></div>
+                    <div class="mock-img-card"></div>
+                    <div class="mock-img-card"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="work-info">
+                <p class="work-tag">Brand + Website</p>
+                <h3>Hospitality rebrand launch</h3>
+                <p>Storytelling-led site lifted direct bookings by 24%.</p>
+                <div class="work-metric"><em>24%</em> booking lift</div>
+              </div>
+            </article>
+
+            <article class="work-card">
+              <div class="work-mock work-mock--b2b">
+                <div class="mock-chrome">
+                  <span class="mock-dot"></span><span class="mock-dot"></span
+                  ><span class="mock-dot"></span>
+                  <div class="mock-urlbar"></div>
+                </div>
+                <div class="mock-canvas mock-canvas--dashboard">
+                  <div class="mock-stats-row">
+                    <div class="mock-kpi"></div>
+                    <div class="mock-kpi"></div>
+                    <div class="mock-kpi"></div>
+                  </div>
+                  <div class="mock-chart-area"></div>
+                </div>
+              </div>
+              <div class="work-info">
+                <p class="work-tag">Growth Marketing</p>
+                <h3>B2B demand generation sprint</h3>
+                <p>
+                  Rebuilt funnels and creative systems to double qualified
+                  inbound leads.
+                </p>
+                <div class="work-metric"><em>2×</em> inbound leads</div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="content-section services-section"
+        id="services"
+        aria-label="Services offered"
+      >
+        <div class="section-head">
+          <p class="services-kicker">SERVICES</p>
+          <h2>Flexible teams for every stage of digital growth.</h2>
+        </div>
+        <div class="section-grid services-grid">
+          <article class="content-card">
+            <div class="service-img">
+              <img
+                src="assets/images/services/brand-and-direction.png"
+                alt=""
+                aria-hidden="true"
+              />
+            </div>
+            <div class="service-text">
+              <h3>Brand &amp; Direction</h3>
+              <p>
+                Positioning, messaging, and visual systems that help brands
+                stand out with purpose.
+              </p>
+            </div>
+          </article>
+          <article class="content-card">
+            <div class="service-img">
+              <img
+                src="assets/images/services/ui-ux-product-design.png"
+                alt=""
+                aria-hidden="true"
+              />
+            </div>
+            <div class="service-text">
+              <h3>UI/UX &amp; Product Design</h3>
+              <p>
+                Research-led interfaces that improve conversion, retention, and
+                overall user satisfaction.
+              </p>
+            </div>
+          </article>
+          <article class="content-card">
+            <div class="service-img">
+              <img
+                src="assets/images/services/web-development.png"
+                alt=""
+                aria-hidden="true"
+              />
+            </div>
+            <div class="service-text">
+              <h3>Web Development</h3>
+              <p>
+                Modern, performant websites and web apps tailored for scale and
+                maintainability.
+              </p>
+            </div>
+          </article>
+          <article class="content-card">
+            <div class="service-img">
+              <img
+                src="assets/images/services/optimization-and-growth.png"
+                alt=""
+                aria-hidden="true"
+              />
+            </div>
+            <div class="service-text">
+              <h3>Optimization &amp; Growth</h3>
+              <p>
+                Analytics, experimentation, and content systems built to sustain
+                long-term growth.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="footer-logo">Eastbrite</div>
+            <p class="footer-tagline">
+              We craft digital experiences<br />that move brands forward.
+            </p>
+            <div class="footer-socials">
+              <a href="#" class="footer-social-link" aria-label="LinkedIn"
+                >in</a
+              >
+              <a href="#" class="footer-social-link" aria-label="Instagram"
+                >ig</a
+              >
+              <a href="#" class="footer-social-link" aria-label="Dribbble"
+                >dr</a
+              >
+              <a href="#" class="footer-social-link" aria-label="X / Twitter"
+                >𝕏</a
+              >
+            </div>
+          </div>
+
+          <nav class="footer-nav" aria-label="Footer navigation">
+            <div class="footer-nav-col">
+              <p class="footer-nav-heading">Company</p>
+              <a href="#about">About</a>
+              <a href="#work">Work</a>
+              <a href="#services">Services</a>
+            </div>
+            <div class="footer-nav-col">
+              <p class="footer-nav-heading">Services</p>
+              <a href="#">Brand & Direction</a>
+              <a href="#">UI/UX & Product Design</a>
+              <a href="#">Web Development</a>
+              <a href="#">Optimization & Growth</a>
+            </div>
+            <div class="footer-nav-col">
+              <p class="footer-nav-heading">Contact</p>
+              <a href="mailto:hello@eastbrite.com">hello@eastbrite.com</a>
+              <a href="#">Start a Project</a>
+            </div>
+          </nav>
+        </div>
+
+        <div class="footer-cta-band">
+          <p>Ready to build something great?</p>
+          <button class="talk-btn">Let's Talk</button>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="footer-copy">&copy; 2026 Eastbrite. All rights reserved.</p>
+          <div class="footer-legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
   </body>
 </html>

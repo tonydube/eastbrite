@@ -1,0 +1,151 @@
+/* ── Site Footer ─────────────────────────────
+   Dark footer with brand, three-column nav,
+   CTA band, and copyright bar.
+─────────────────────────────────────────────── */
+
+.site-footer {
+  background: #0a0818;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.footer-inner {
+  padding: 60px 56px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 48px;
+}
+
+.footer-logo {
+  font-family: "The Seasons Bold", serif;
+  font-size: 28px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.footer-tagline {
+  margin: 14px 0 0;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: rgba(219, 211, 228, 0.62);
+  max-width: 26ch;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.footer-social-link {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: grid;
+  place-items: center;
+  color: rgba(219, 211, 228, 0.7);
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    border-color 0.2s,
+    color 0.2s;
+}
+
+.footer-social-link:hover {
+  border-color: rgba(247, 167, 94, 0.6);
+  color: rgba(247, 167, 94, 0.95);
+}
+
+/* ── Footer Navigation ───────────────────── */
+
+.footer-nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.footer-nav-heading {
+  margin: 0 0 14px;
+  font-size: 10px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(247, 167, 94, 0.9);
+}
+
+.footer-nav-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-nav-col a {
+  color: rgba(219, 211, 228, 0.66);
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-nav-col a:hover {
+  color: var(--ink);
+}
+
+/* ── Footer CTA Band ─────────────────────── */
+
+.footer-cta-band {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 28px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-cta-band p {
+  margin: 0;
+  font-family: "The Seasons Bold", serif;
+  font-size: 26px;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+/* ── Footer Bottom Bar ───────────────────── */
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.footer-copy {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(219, 211, 228, 0.4);
+}
+
+.footer-legal {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-legal a {
+  font-size: 13px;
+  color: rgba(219, 211, 228, 0.4);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-legal a:hover {
+  color: rgba(219, 211, 228, 0.8);
+}

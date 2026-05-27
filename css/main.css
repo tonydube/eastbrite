@@ -1,0 +1,33 @@
+/* ================================================================
+   Eastbrite — Main Stylesheet
+   Entry point. All partials are imported in cascade order.
+
+   Partial map:
+     _tokens      → CSS variables + font declarations
+     _base        → reset, html, body
+     _layout      → .scene, .lower-content
+     _topbar      → header, nav, menu button
+     _hero        → hero section + CTA
+     _cards       → feature-row glass cards
+     _trusted     → brand logo strip
+     _sections    → shared .content-section base styles
+     _about       → about section
+     _work        → work showcase + browser mocks
+     _services    → services section
+     _footer      → site footer
+     _responsive  → all breakpoint overrides
+   ================================================================ */
+
+@import "./_tokens.css";
+@import "./_base.css";
+@import "./_layout.css";
+@import "./_topbar.css";
+@import "./_hero.css";
+@import "./_cards.css";
+@import "./_trusted.css";
+@import "./_sections.css";
+@import "./_about.css";
+@import "./_work.css";
+@import "./_services.css";
+@import "./_footer.css";
+@import "./_responsive.css";

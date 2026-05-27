@@ -1,0 +1,27 @@
+/* ── Base Reset & Global Styles ──────────────
+   Box model, body defaults, scroll behaviour.
+─────────────────────────────────────────────── */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  color: var(--ink);
+  background: #100d21;
+  min-height: 100vh;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+body.menu-open .topbar {
+  z-index: 50;
+}

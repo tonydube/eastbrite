@@ -1,0 +1,33 @@
+/* ── Design Tokens ───────────────────────────
+   All CSS custom properties and font declarations.
+   Edit this file to update the global design system.
+─────────────────────────────────────────────── */
+
+:root {
+  --ink: #f2eef2;
+  --ink-soft: rgba(241, 238, 246, 0.82);
+  --ink-muted: rgba(231, 223, 230, 0.64);
+  --accent: #f1934e;
+  --accent-strong: #ff9f5f;
+  --glass: rgba(31, 29, 49, 0.34);
+  --glass-border: rgba(255, 255, 255, 0.16);
+  --shadow-soft: 0 30px 90px rgba(5, 6, 16, 0.5);
+}
+
+@font-face {
+  font-family: "The Seasons Bold";
+  src: url("https://db.onlinewebfonts.com/t/f7d34c9e4c3102c89048d775c27a78f3.eot");
+  src:
+    url("https://db.onlinewebfonts.com/t/f7d34c9e4c3102c89048d775c27a78f3.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/f7d34c9e4c3102c89048d775c27a78f3.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/f7d34c9e4c3102c89048d775c27a78f3.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/f7d34c9e4c3102c89048d775c27a78f3.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/f7d34c9e4c3102c89048d775c27a78f3.svg#The Seasons Bold")
+      format("svg");
+  font-weight: 700;
+  font-style: normal;
+}

@@ -1,0 +1,42 @@
+/* ── Trusted Brands Marquee ──────────────────
+   Horizontal logo strip beneath the hero scene.
+─────────────────────────────────────────────── */
+
+.trusted {
+  position: relative;
+  z-index: 3;
+  margin-top: 48px;
+  text-align: center;
+}
+
+.trusted-label {
+  font-size: 10px;
+  letter-spacing: 0.45em;
+  color: rgba(224, 214, 222, 0.82);
+  margin-bottom: 10px;
+}
+
+.logo-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  color: rgba(218, 210, 220, 0.65);
+}
+
+.logo-row span {
+  opacity: 0.82;
+}
+
+.logo-netlify,
+.logo-airbnb,
+.logo-slack {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.logo-google,
+.logo-microsoft,
+.logo-hubspot,
+.logo-amazon {
+  font-weight: 700;
+}

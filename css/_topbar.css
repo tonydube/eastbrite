@@ -1,0 +1,156 @@
+/* ── Topbar / Header ─────────────────────────
+   Logo, primary nav, CTA button, and
+   mobile hamburger menu.
+─────────────────────────────────────────────── */
+
+.topbar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.brand {
+  font-family: "The Seasons Bold", serif;
+  font-size: 32px;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+
+.agency-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 35px;
+  padding: 0 15px;
+  border-radius: 999px;
+  font-size: 13px;
+  color: rgba(243, 235, 242, 0.9);
+  background: rgba(23, 23, 41, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(8px);
+}
+
+.hero-agency-pill {
+  display: none;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent);
+}
+
+/* ── Primary Navigation ──────────────────── */
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  margin-left: 78px;
+}
+
+.main-nav a {
+  color: rgba(237, 228, 240, 0.92);
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.015em;
+  transition: color 0.28s ease;
+}
+
+.main-nav a:hover {
+  color: #fff;
+}
+
+/* ── Top-right Actions ───────────────────── */
+
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.talk-btn {
+  border: 1px solid rgba(255, 176, 112, 0.5);
+  color: #fff7ee;
+  background:
+    radial-gradient(
+      120% 120% at 20% 10%,
+      rgba(255, 167, 93, 0.35),
+      rgba(22, 20, 40, 0.7)
+    ),
+    rgba(24, 22, 43, 0.58);
+  height: 42px;
+  padding: 0 24px;
+  border-radius: 100px;
+  font-size: 16px;
+  font-family: "The Seasons Bold", serif;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  box-shadow:
+    0 0 0 1px rgba(255, 152, 85, 0.1),
+    0 0 34px rgba(255, 153, 84, 0.34);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.talk-btn:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 0 0 1px rgba(255, 152, 85, 0.22),
+    0 0 44px rgba(255, 153, 84, 0.44);
+}
+
+/* ── Mobile Hamburger Button ─────────────── */
+
+.menu-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(21, 20, 38, 0.45);
+  backdrop-filter: blur(8px);
+  display: none;
+  place-content: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-btn span {
+  display: block;
+  width: 16px;
+  height: 2px;
+  background: rgba(235, 225, 238, 0.95);
+  transition:
+    transform 0.28s ease,
+    opacity 0.28s ease;
+}
+
+.menu-btn:focus-visible {
+  outline: 2px solid rgba(255, 184, 124, 0.78);
+  outline-offset: 2px;
+}
+
+.menu-btn.is-open {
+  position: relative;
+  z-index: 60;
+}
+
+.menu-btn.is-open span:first-child {
+  transform: translateY(3.5px) rotate(45deg);
+}
+
+.menu-btn.is-open span:last-child {
+  transform: translateY(-3.5px) rotate(-45deg);
+}

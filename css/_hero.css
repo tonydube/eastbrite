@@ -1,0 +1,125 @@
+/* ── Hero Section ────────────────────────────
+   Headline copy, tag line, CTA, and optional
+   stats glass panel.
+─────────────────────────────────────────────── */
+
+.hero {
+  position: relative;
+  z-index: 2;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero-copy h1 {
+  margin: 0 0 24px 0;
+  font-family: "The Seasons Bold", serif;
+  font-size: 82px;
+  line-height: 0.84;
+  letter-spacing: -0.025em;
+  text-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+}
+
+.hero-copy p {
+  margin: 0 0 28px 0;
+  max-width: 470px;
+  font-family: "Poppins", sans-serif;
+  font-size: 34px;
+  line-height: 1.18;
+  color: var(--ink-soft);
+  font-weight: 300;
+}
+
+.tags {
+  letter-spacing: 0.32em;
+  font-size: 11px;
+  color: var(--ink-muted);
+  margin-bottom: 28px;
+}
+
+.tags span {
+  letter-spacing: normal;
+  margin: 0 7px;
+}
+
+/* ── Primary CTA Button ──────────────────── */
+
+.primary-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  height: 48px;
+  border-radius: 999px;
+  padding: 0 12px 0 22px;
+  color: #f8f0ea;
+  font-size: 16px;
+  border: 1px solid rgba(255, 164, 99, 0.48);
+  background:
+    radial-gradient(
+      140% 180% at 30% 0%,
+      rgba(255, 181, 120, 0.4),
+      rgba(51, 33, 56, 0.6) 60%
+    ),
+    rgba(34, 23, 47, 0.55);
+  backdrop-filter: blur(7px);
+  cursor: pointer;
+  transition:
+    box-shadow 0.35s ease,
+    transform 0.3s ease;
+}
+
+.primary-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 50px rgba(255, 149, 84, 0.46);
+}
+
+.cta-arrow {
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(255, 220, 191, 0.45);
+  border-radius: 50%;
+  display: inline-grid;
+  place-items: center;
+  font-size: 18px;
+}
+
+/* ── Stats Glass Panel (optional/commented) ── */
+
+.stats-glass {
+  width: 130px;
+  margin-top: -2px;
+  margin-right: 0;
+  margin-left: auto;
+  padding: 18px 12px;
+  border-radius: 18px;
+  border: 1px solid var(--glass-border);
+  background: linear-gradient(
+    180deg,
+    rgba(37, 35, 58, 0.1),
+    rgba(75, 54, 82, 0.01)
+  );
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(10px);
+}
+
+.stat-item + .stat-item {
+  margin-top: 28px;
+}
+
+.stat-icon {
+  font-size: 14px;
+  color: rgba(255, 170, 108, 0.85);
+  margin-bottom: 6px;
+}
+
+.stat-value {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.stat-label {
+  margin-top: 6px;
+  font-size: 11px;
+  line-height: 1.2;
+  color: rgba(231, 221, 229, 0.75);
+}

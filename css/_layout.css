@@ -1,0 +1,67 @@
+/* ── Scene (cinematic hero wrapper) ──────────
+   Full-viewport background stage with parallax
+   zoom animation and radial vignette overlay.
+─────────────────────────────────────────────── */
+
+.scene {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px 40px 20px;
+  overflow: hidden;
+  border-radius: 2px;
+  background: none;
+}
+
+.scene::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  background: url("../assets/images/backgrounds/background2.png") center 58% /
+    cover no-repeat;
+  filter: saturate(90%) brightness(85%) contrast(95%);
+  transform: scale(1);
+  animation: bg-slow-zoom 36s ease-out forwards;
+  will-change: transform;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.scene::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 50% 44%,
+    transparent 20%,
+    rgba(6, 5, 18, 0.45) 55%,
+    rgba(4, 3, 14, 0.82) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes bg-slow-zoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.08);
+  }
+}
+
+/* ── Lower content container ─────────────────
+   Wraps everything below the cinematic scene.
+─────────────────────────────────────────────── */
+
+.lower-content {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 12px 40px 34px;
+  background: #100d21;
+}

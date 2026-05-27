@@ -1,0 +1,77 @@
+/* ── Shared Content Section Styles ───────────
+   Base styles for the lower page sections that
+   sit inside .lower-content.
+─────────────────────────────────────────────── */
+
+.content-section {
+  position: relative;
+  margin-top: 54px;
+  padding: 26px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: #1a1530;
+  box-shadow: 0 18px 44px rgba(5, 8, 20, 0.28);
+}
+
+.content-section:first-child {
+  margin-top: 0;
+}
+
+.section-head h2 {
+  margin: 10px 0 0;
+  max-width: 22ch;
+  font-family: "The Seasons Bold", serif;
+  font-size: 40px;
+  line-height: 1;
+  letter-spacing: -0.015em;
+}
+
+.section-grid {
+  margin-top: 24px;
+  display: grid;
+  gap: 14px;
+}
+
+.about-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.services-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.content-card {
+  min-height: 150px;
+  padding: 18px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #150f28;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.content-card h3 {
+  margin: 0;
+  font-family: "The Seasons Bold", serif;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.content-card p {
+  margin: 10px 0 0;
+  color: rgba(230, 223, 234, 0.85);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.content-card ul {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: rgba(230, 223, 234, 0.85);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.content-card li + li {
+  margin-top: 4px;
+}
