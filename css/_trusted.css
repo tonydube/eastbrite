@@ -5,7 +5,7 @@
 .trusted {
   position: relative;
   z-index: 3;
-  margin-top: 48px;
+  margin-top: 96px;
   text-align: center;
 }
 
@@ -19,24 +19,26 @@
 .logo-row {
   display: flex;
   justify-content: space-between;
-  font-size: 18px;
-  color: rgba(218, 210, 220, 0.65);
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: rgba(230, 222, 230, 0.9);
 }
 
-.logo-row span {
-  opacity: 0.82;
-}
-
-.logo-netlify,
-.logo-airbnb,
-.logo-slack {
-  font-weight: 600;
+.logo-figma,
+.logo-astro,
+.logo-vite {
+  font-weight: 500;
   letter-spacing: -0.02em;
 }
 
-.logo-google,
-.logo-microsoft,
-.logo-hubspot,
-.logo-amazon {
-  font-weight: 700;
+.logo-react,
+.logo-typescript {
+  font-weight: 500;
+}
+
+.logo-django,
+.logo-drf,
+.logo-postgres {
+  font-weight: 500;
 }
