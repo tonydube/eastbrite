@@ -75,3 +75,147 @@
 .content-card li + li {
   margin-top: 4px;
 }
+
+/* ── Contact Section ───────────────────────── */
+
+.contact-section {
+  margin-top: 44px;
+  padding: 34px 30px;
+  border-radius: 24px;
+  background:
+    radial-gradient(
+      circle at 10% 0%,
+      rgba(255, 169, 109, 0.12),
+      transparent 45%
+    ),
+    #171229;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-kicker {
+  margin: 0;
+  color: rgba(247, 167, 94, 0.95);
+  font-size: 12px;
+  letter-spacing: 0.28em;
+}
+
+.contact-head h2 {
+  margin: 10px 0 8px;
+  font-family: "The Seasons Bold", serif;
+  font-size: 42px;
+  line-height: 0.98;
+  letter-spacing: -0.015em;
+}
+
+.contact-intro {
+  margin: 0;
+  max-width: 50ch;
+  color: rgba(230, 223, 234, 0.82);
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.contact-form {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.contact-form input[name="_honey"] {
+  display: none;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field span {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(230, 223, 234, 0.74);
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  background: rgba(11, 9, 21, 0.7);
+  color: rgba(242, 238, 246, 0.96);
+  font: inherit;
+  font-size: 15px;
+  line-height: 1.4;
+  padding: 12px 14px;
+}
+
+.field select {
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, #f2eef2 50%),
+    linear-gradient(135deg, #f2eef2 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) calc(1em + 2px),
+    calc(100% - 13px) calc(1em + 2px);
+  background-size:
+    5px 5px,
+    5px 5px;
+  background-repeat: no-repeat;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 132px;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: 2px solid rgba(255, 184, 124, 0.78);
+  outline-offset: 1px;
+  border-color: rgba(255, 184, 124, 0.52);
+}
+
+.field-full {
+  grid-column: 1 / -1;
+}
+
+.contact-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.contact-submit {
+  border: 0;
+}
+
+.contact-note {
+  margin: 0;
+  color: rgba(230, 223, 234, 0.75);
+  font-size: 14px;
+}
+
+.contact-note a {
+  color: rgba(255, 180, 119, 0.92);
+  text-decoration: none;
+}
+
+.contact-note a:hover {
+  color: rgba(255, 197, 152, 1);
+}
+
+.contact-status {
+  grid-column: 1 / -1;
+  margin: 0;
+  min-height: 20px;
+  font-size: 14px;
+  color: rgba(247, 167, 94, 0.95);
+}

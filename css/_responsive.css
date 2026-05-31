@@ -567,6 +567,35 @@
     align-items: flex-start;
     gap: 10px;
   }
+
+  .contact-section {
+    margin-top: 28px;
+    padding: 24px 16px;
+    border-radius: 20px;
+  }
+
+  .contact-head h2 {
+    font-size: 34px;
+    line-height: 0.98;
+  }
+
+  .contact-intro {
+    font-size: 15px;
+  }
+
+  .contact-form {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .contact-actions {
+    align-items: stretch;
+  }
+
+  .contact-submit {
+    width: 100%;
+    justify-content: space-between;
+  }
 }
 
 /* ── 480px and below ─────────────────────── */
@@ -819,6 +848,30 @@
   .about-value p {
     margin-top: 4px;
     font-size: 12px;
+  }
+
+  .contact-section {
+    padding: 20px 12px;
+  }
+
+  .contact-head h2 {
+    font-size: 30px;
+    max-width: 16ch;
+  }
+
+  .contact-intro {
+    font-size: 14px;
+  }
+
+  .field input,
+  .field select,
+  .field textarea {
+    font-size: 14px;
+  }
+
+  .contact-note,
+  .contact-status {
+    font-size: 13px;
   }
 
   /* Footer */

@@ -4,6 +4,70 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eastbrite — Digital Agency</title>
+    <meta
+      name="description"
+      content="Eastbrite is a digital agency helping businesses grow through brand direction, UI/UX and product design, web development, and optimization strategy."
+    />
+    <link rel="canonical" href="https://eastbrite.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Eastbrite" />
+    <meta property="og:title" content="Eastbrite - Digital Agency" />
+    <meta
+      property="og:description"
+      content="Eastbrite is a digital agency helping businesses grow through brand direction, UI/UX and product design, web development, and optimization strategy."
+    />
+    <meta property="og:url" content="https://eastbrite.com/" />
+    <meta property="og:image" content="https://eastbrite.com/logo.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Eastbrite - Digital Agency" />
+    <meta
+      name="twitter:description"
+      content="Eastbrite is a digital agency helping businesses grow through brand direction, UI/UX and product design, web development, and optimization strategy."
+    />
+    <meta name="twitter:image" content="https://eastbrite.com/logo.svg" />
+    <script
+      defer
+      data-domain="eastbrite.com"
+      src="https://plausible.io/js/script.js"
+    ></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://eastbrite.com/#organization",
+            "name": "Eastbrite",
+            "url": "https://eastbrite.com/",
+            "logo": "https://eastbrite.com/logo.svg",
+            "email": "hello@eastbrite.com"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://eastbrite.com/#website",
+            "url": "https://eastbrite.com/",
+            "name": "Eastbrite",
+            "publisher": {
+              "@id": "https://eastbrite.com/#organization"
+            }
+          },
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://eastbrite.com/#service",
+            "name": "Eastbrite",
+            "url": "https://eastbrite.com/",
+            "email": "hello@eastbrite.com",
+            "areaServed": "Worldwide",
+            "serviceType": [
+              "Brand Direction",
+              "UI/UX and Product Design",
+              "Web Development",
+              "Optimization and Growth"
+            ]
+          }
+        ]
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -28,14 +92,15 @@
           </div>
         </div>
 
-        <nav class="main-nav" id="primary-nav" aria-label="Primary">
+        <nav class="main-nav" id="primary-nav" aria-label="Main navigation">
           <a href="#about">About</a>
           <a href="#work">Work</a>
           <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
         </nav>
 
         <div class="top-actions">
-          <button class="talk-btn">Let's Talk</button>
+          <a class="talk-btn" href="#contact">Let's Talk</a>
           <button
             class="menu-btn"
             aria-label="Open menu"
@@ -55,14 +120,14 @@
             <span class="dot"></span>
             Digital Agency
           </div>
-          <p>We craft digital experiences that move brands forward.</p>
+          <h1>We craft digital experiences that move brands forward.</h1>
           <div class="tags">
             DESIGN <span>•</span> TECHNOLOGY <span>•</span> GROWTH
           </div>
-          <button class="primary-cta">
+          <a class="primary-cta" href="#contact">
             <span>Start a Project</span>
             <span class="cta-arrow">→</span>
-          </button>
+          </a>
         </section>
 
         <!--
@@ -98,30 +163,40 @@
             We blend human insight with cutting-edge technology to build digital
             products that inspire and perform.
           </p>
-          <button class="circle-action" aria-label="Learn more">→</button>
+          <a class="circle-action" aria-label="Learn more" href="#services"
+            >→</a
+          >
         </article>
 
         <article class="card services-card">
           <div class="card-top">
             <div class="card-kicker"><span class="dot"></span>What We Do</div>
-            <a class="view-all" href="#">View All <span>→</span></a>
+            <a class="view-all" href="#services">View All <span>→</span></a>
           </div>
 
           <h2>End-to-end digital<br />solutions.</h2>
 
           <div class="service-grid">
-            <div class="service-item">
-              <span class="service-icon">⬡</span>Brand Strategy
-            </div>
-            <div class="service-item">
-              <span class="service-icon">◎</span>UI/UX Design
-            </div>
-            <div class="service-item">
-              <span class="service-icon">&lt;/&gt;</span>Web Development
-            </div>
-            <div class="service-item">
-              <span class="service-icon">↗</span>Digital Growth
-            </div>
+            <a
+              class="service-item service-item-link"
+              href="brand-direction.html"
+              ><span class="service-icon">⬡</span>Brand &amp; Direction</a
+            >
+            <a
+              class="service-item service-item-link"
+              href="uiux-product-design.html"
+              ><span class="service-icon">◎</span>UI/UX &amp; Product</a
+            >
+            <a
+              class="service-item service-item-link"
+              href="web-development.html"
+              ><span class="service-icon">&lt;/&gt;</span>Web Development</a
+            >
+            <a
+              class="service-item service-item-link"
+              href="optimization-growth.html"
+              ><span class="service-icon">↗</span>Optimization &amp; Growth</a
+            >
           </div>
         </article>
       </section>
@@ -226,7 +301,7 @@
               Selected collaborations<br />and measurable wins.
             </h2>
           </div>
-          <a class="work-view-all" href="#"
+          <a class="work-view-all" href="#services"
             >View all work <span class="work-arrow">→</span></a
           >
         </div>
@@ -334,7 +409,7 @@
           <h2>Flexible teams for every stage of digital growth.</h2>
         </div>
         <div class="section-grid services-grid">
-          <article class="content-card">
+          <a class="content-card service-card-link" href="brand-direction.html">
             <div class="service-img">
               <img
                 src="assets/images/services/brand-and-direction.png"
@@ -349,8 +424,11 @@
                 stand out with purpose.
               </p>
             </div>
-          </article>
-          <article class="content-card">
+          </a>
+          <a
+            class="content-card service-card-link"
+            href="uiux-product-design.html"
+          >
             <div class="service-img">
               <img
                 src="assets/images/services/ui-ux-product-design.png"
@@ -365,8 +443,8 @@
                 overall user satisfaction.
               </p>
             </div>
-          </article>
-          <article class="content-card">
+          </a>
+          <a class="content-card service-card-link" href="web-development.html">
             <div class="service-img">
               <img
                 src="assets/images/services/web-development.png"
@@ -381,8 +459,11 @@
                 maintainability.
               </p>
             </div>
-          </article>
-          <article class="content-card">
+          </a>
+          <a
+            class="content-card service-card-link"
+            href="optimization-growth.html"
+          >
             <div class="service-img">
               <img
                 src="assets/images/services/optimization-and-growth.png"
@@ -397,8 +478,88 @@
                 long-term growth.
               </p>
             </div>
-          </article>
+          </a>
         </div>
+      </section>
+
+      <section
+        class="content-section contact-section"
+        id="contact"
+        aria-label="Contact Eastbrite"
+      >
+        <div class="section-head contact-head">
+          <p class="contact-kicker">CONTACT</p>
+          <h2>Tell us what you are building.</h2>
+          <p class="contact-intro">
+            Share a few project details and we will reply within 1 business day.
+          </p>
+        </div>
+
+        <form
+          id="contact-form"
+          class="contact-form"
+          action="https://formsubmit.co/hello@eastbrite.com"
+          method="POST"
+        >
+          <input
+            type="hidden"
+            name="_subject"
+            value="New Inquiry - Eastbrite"
+          />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" />
+
+          <label class="field">
+            <span>Name</span>
+            <input name="name" type="text" required />
+          </label>
+
+          <label class="field">
+            <span>Email</span>
+            <input name="email" type="email" required />
+          </label>
+
+          <label class="field">
+            <span>Company</span>
+            <input name="company" type="text" />
+          </label>
+
+          <label class="field">
+            <span>Service Needed</span>
+            <select name="service" required>
+              <option value="" selected disabled>Select a service</option>
+              <option>Brand &amp; Direction</option>
+              <option>UI/UX &amp; Product Design</option>
+              <option>Web Development</option>
+              <option>Optimization &amp; Growth</option>
+              <option>Multiple Services</option>
+            </select>
+          </label>
+
+          <label class="field field-full">
+            <span>Project Goals</span>
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Briefly describe your goals, timeline, and budget range."
+              required
+            ></textarea>
+          </label>
+
+          <div class="contact-actions">
+            <button class="primary-cta contact-submit" type="submit">
+              <span>Send Inquiry</span>
+              <span class="cta-arrow">→</span>
+            </button>
+            <p class="contact-note">
+              Prefer email? Reach us at
+              <a href="mailto:hello@eastbrite.com">hello@eastbrite.com</a>
+            </p>
+          </div>
+
+          <p class="contact-status" id="contact-status" aria-live="polite"></p>
+        </form>
       </section>
     </div>
 
@@ -411,16 +572,28 @@
               We craft digital experiences<br />that move brands forward.
             </p>
             <div class="footer-socials">
-              <a href="#" class="footer-social-link" aria-label="LinkedIn"
+              <a
+                href="https://www.linkedin.com"
+                class="footer-social-link"
+                aria-label="LinkedIn"
                 >in</a
               >
-              <a href="#" class="footer-social-link" aria-label="Instagram"
+              <a
+                href="https://www.instagram.com"
+                class="footer-social-link"
+                aria-label="Instagram"
                 >ig</a
               >
-              <a href="#" class="footer-social-link" aria-label="Dribbble"
+              <a
+                href="https://dribbble.com"
+                class="footer-social-link"
+                aria-label="Dribbble"
                 >dr</a
               >
-              <a href="#" class="footer-social-link" aria-label="X / Twitter"
+              <a
+                href="https://x.com"
+                class="footer-social-link"
+                aria-label="X / Twitter"
                 >𝕏</a
               >
             </div>
@@ -435,29 +608,32 @@
             </div>
             <div class="footer-nav-col">
               <p class="footer-nav-heading">Services</p>
-              <a href="#">Brand & Direction</a>
-              <a href="#">UI/UX & Product Design</a>
-              <a href="#">Web Development</a>
-              <a href="#">Optimization & Growth</a>
+              <a href="brand-direction.html">Brand &amp; Direction</a>
+              <a href="uiux-product-design.html">UI/UX &amp; Product Design</a>
+              <a href="web-development.html">Web Development</a>
+              <a href="optimization-growth.html">Optimization &amp; Growth</a>
             </div>
             <div class="footer-nav-col">
               <p class="footer-nav-heading">Contact</p>
               <a href="mailto:hello@eastbrite.com">hello@eastbrite.com</a>
-              <a href="#">Start a Project</a>
+              <a
+                href="mailto:hello@eastbrite.com?subject=Start%20a%20Project%20-%20Eastbrite"
+                >Start a Project</a
+              >
             </div>
           </nav>
         </div>
 
         <div class="footer-cta-band">
           <p>Ready to build something great?</p>
-          <button class="talk-btn">Let's Talk</button>
+          <a class="talk-btn" href="#contact">Let's Talk</a>
         </div>
 
         <div class="footer-bottom">
           <p class="footer-copy">&copy; 2026 Eastbrite. All rights reserved.</p>
           <div class="footer-legal">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Use</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-use.html">Terms of Use</a>
           </div>
         </div>
       </div>
