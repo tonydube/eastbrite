@@ -1,0 +1,398 @@
+:root {
+  --wd-ink: #f2eef2;
+  --wd-ink-soft: rgba(236, 231, 240, 0.82);
+  --wd-ink-muted: rgba(219, 213, 228, 0.64);
+  --wd-accent: #6fc0c7;
+  --wd-accent-warm: #f0ab73;
+  --sp-ink: #f2eef2;
+  --sp-ink-soft: rgba(236, 231, 240, 0.82);
+  --sp-accent: #6fc0c7;
+  --wd-bg: #100d21;
+  --wd-panel: #18132b;
+  --wd-panel-soft: #211b38;
+  --wd-border: rgba(255, 255, 255, 0.12);
+}
+
+@font-face {
+  font-family: "The Seasons Bold";
+  src: url("https://db.onlinewebfonts.com/t/f7d34c9e4c3102c89048d775c27a78f3.eot");
+  src:
+    url("https://db.onlinewebfonts.com/t/f7d34c9e4c3102c89048d775c27a78f3.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/f7d34c9e4c3102c89048d775c27a78f3.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/f7d34c9e4c3102c89048d775c27a78f3.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/f7d34c9e4c3102c89048d775c27a78f3.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/f7d34c9e4c3102c89048d775c27a78f3.svg#The Seasons Bold")
+      format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  color: var(--wd-ink);
+  background:
+    radial-gradient(
+      circle at 10% 9%,
+      rgba(111, 192, 199, 0.16),
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 90% 9%,
+      rgba(240, 171, 115, 0.15),
+      transparent 46%
+    ),
+    var(--wd-bg);
+}
+
+.wd-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 24px 34px;
+}
+
+.wd-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border: 1px solid var(--wd-border);
+  border-radius: 18px;
+  padding: 14px 18px;
+  background: rgba(23, 19, 40, 0.72);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 12px;
+  z-index: 20;
+}
+
+.wd-brand {
+  color: var(--wd-ink);
+  text-decoration: none;
+  font-family: "The Seasons Bold", serif;
+  font-size: 28px;
+  letter-spacing: -0.01em;
+}
+
+.wd-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.wd-nav a {
+  color: var(--wd-ink-soft);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.wd-nav a:hover {
+  color: var(--wd-ink);
+}
+
+.wd-top-cta,
+.wd-primary-btn {
+  border: 1px solid rgba(111, 192, 199, 0.62);
+  color: #f7ffff;
+  text-decoration: none;
+  background:
+    radial-gradient(
+      120% 120% at 10% 5%,
+      rgba(111, 192, 199, 0.36),
+      rgba(35, 31, 60, 0.72)
+    ),
+    rgba(22, 20, 39, 0.75);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "The Seasons Bold", serif;
+  letter-spacing: 0.01em;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.wd-top-cta {
+  min-height: 40px;
+  padding: 0 18px;
+  font-size: 15px;
+}
+
+.wd-primary-btn {
+  min-height: 48px;
+  padding: 0 22px;
+  font-size: 17px;
+}
+
+.wd-top-cta:hover,
+.wd-primary-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(111, 192, 199, 0.24);
+}
+
+.wd-kicker {
+  margin: 0;
+  color: rgba(111, 192, 199, 0.95);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.wd-hero {
+  padding: 56px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.wd-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(130deg, rgba(111, 192, 199, 0.15), transparent 42%),
+    linear-gradient(320deg, rgba(240, 171, 115, 0.13), transparent 44%);
+  pointer-events: none;
+}
+
+.wd-hero h1 {
+  margin: 16px 0 0;
+  max-width: 14ch;
+  font-family: "The Seasons Bold", serif;
+  font-size: clamp(42px, 6.6vw, 70px);
+  line-height: 0.95;
+  letter-spacing: -0.018em;
+  position: relative;
+}
+
+.wd-hero-sub {
+  margin: 22px 0 0;
+  max-width: 60ch;
+  color: var(--wd-ink-soft);
+  line-height: 1.6;
+  font-size: 18px;
+  position: relative;
+}
+
+.wd-hero .wd-primary-btn {
+  margin-top: 28px;
+  position: relative;
+}
+
+.wd-intro {
+  padding: 42px 38px;
+}
+
+.wd-intro h2 {
+  margin: 0;
+  font-family: "The Seasons Bold", serif;
+  font-size: 42px;
+  line-height: 0.98;
+  max-width: 15ch;
+}
+
+.wd-intro-lead {
+  margin: 14px 0 0;
+  color: rgba(111, 192, 199, 0.95);
+  font-size: 30px;
+  font-family: "The Seasons Bold", serif;
+}
+
+.wd-questions {
+  padding: 38px;
+  background:
+    linear-gradient(145deg, rgba(111, 192, 199, 0.14), rgba(25, 20, 41, 0.92)),
+    rgba(19, 16, 33, 0.88);
+}
+
+.wd-questions h2 {
+  margin: 0;
+  font-family: "The Seasons Bold", serif;
+  font-size: 38px;
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+}
+
+.wd-questions ul {
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.wd-questions li {
+  margin: 0;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(25, 20, 42, 0.82);
+  color: var(--wd-ink-soft);
+}
+
+.wd-build-grid {
+  margin-top: 22px;
+}
+
+.wd-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  background: var(--wd-panel);
+  padding: 20px;
+}
+
+.wd-card h3 {
+  margin: 0;
+  font-family: "The Seasons Bold", serif;
+  font-size: 26px;
+  line-height: 1;
+}
+
+.wd-card ul {
+  margin: 14px 0 0;
+  padding-left: 18px;
+  color: var(--wd-ink-soft);
+  line-height: 1.55;
+}
+
+.wd-card li + li {
+  margin-top: 7px;
+}
+
+.wd-signs-list {
+  margin: 0;
+  padding: 18px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--wd-panel-soft);
+  list-style: none;
+  display: grid;
+  gap: 11px;
+}
+
+.wd-signs-list li {
+  color: var(--wd-ink-soft);
+  line-height: 1.5;
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  gap: 10px;
+  align-items: start;
+}
+
+.wd-signs-list li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  margin-top: 7px;
+  border-radius: 50%;
+  background: rgba(111, 192, 199, 0.95);
+  box-shadow: 0 0 16px rgba(111, 192, 199, 0.5);
+}
+
+.wd-process-grid {
+  margin-top: 22px;
+}
+
+.wd-step {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  background: var(--wd-panel);
+  padding: 20px;
+}
+
+.wd-step-num {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  color: rgba(111, 192, 199, 0.95);
+}
+
+.wd-step h3 {
+  margin: 10px 0 0;
+  font-family: "The Seasons Bold", serif;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.wd-step p {
+  margin: 12px 0 0;
+  color: var(--wd-ink-soft);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.wd-deliverables-grid {
+  margin-top: 18px;
+}
+
+.wd-deliverables-grid p {
+  margin: 0;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--wd-panel);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--wd-ink-soft);
+}
+
+.wd-final-cta {
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 52px;
+  background:
+    linear-gradient(150deg, rgba(111, 192, 199, 0.15), rgba(22, 19, 39, 0.92)),
+    rgba(18, 15, 32, 0.88);
+}
+
+.wd-final-cta p {
+  margin: 18px auto 0;
+  max-width: 56ch;
+  color: var(--wd-ink-soft);
+  line-height: 1.6;
+}
+
+.wd-final-cta .wd-primary-btn {
+  margin-top: 24px;
+}
+
+@media (max-width: 720px) {
+  .wd-hero,
+  .wd-intro,
+  .wd-questions,
+  .wd-build,
+  .wd-process,
+  .wd-deliverables,
+  .wd-why,
+  .wd-final-cta,
+  .wd-signs {
+    padding: 26px 20px;
+  }
+
+  .wd-intro h2,
+  .wd-questions h2,
+  .wd-build h2,
+  .wd-process h2,
+  .wd-deliverables h2,
+  .wd-why h2,
+  .wd-final-cta h2,
+  .wd-signs h2 {
+    font-size: 33px;
+  }
+
+  .wd-build-grid,
+  .wd-questions ul,
+  .wd-deliverables-grid,
+  .wd-process-grid {
+    grid-template-columns: 1fr;
+  }
+}

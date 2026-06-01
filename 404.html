@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Not Found | Eastbrite</title>
+    <meta
+      name="description"
+      content="The page you are looking for could not be found. Explore Eastbrite services or contact us to start your project."
+    />
+    <meta name="robots" content="noindex,follow" />
+    <link rel="canonical" href="https://eastbrite.com/404.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Eastbrite" />
+    <meta property="og:title" content="Page Not Found | Eastbrite" />
+    <meta
+      property="og:description"
+      content="The page you are looking for could not be found. Explore Eastbrite services or contact us to start your project."
+    />
+    <meta property="og:url" content="https://eastbrite.com/404.html" />
+    <meta property="og:image" content="https://eastbrite.com/logo.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Page Not Found | Eastbrite" />
+    <meta
+      name="twitter:description"
+      content="The page you are looking for could not be found. Explore Eastbrite services or contact us to start your project."
+    />
+    <meta name="twitter:image" content="https://eastbrite.com/logo.svg" />
+    <link rel="icon" type="image/svg+xml" href="logo.svg" />
+    <style>
+      :root {
+        --ink: #f2eef2;
+        --ink-soft: rgba(241, 238, 246, 0.84);
+        --accent: #f1934e;
+        --bg-a: #16132a;
+        --bg-b: #090814;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family:
+          Manrope,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(
+            circle at 15% 0%,
+            rgba(255, 170, 112, 0.2),
+            transparent 35%
+          ),
+          radial-gradient(
+            circle at 85% 90%,
+            rgba(98, 81, 194, 0.18),
+            transparent 40%
+          ),
+          linear-gradient(180deg, var(--bg-a), var(--bg-b));
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+
+      .panel {
+        width: min(740px, 100%);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 22px;
+        background: rgba(18, 16, 34, 0.72);
+        backdrop-filter: blur(10px);
+        padding: clamp(24px, 4vw, 42px);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
+      }
+
+      .kicker {
+        margin: 0;
+        letter-spacing: 0.18em;
+        font-size: 12px;
+        color: rgba(242, 238, 242, 0.65);
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 10px 0 14px;
+        font-size: clamp(36px, 7vw, 60px);
+        line-height: 0.95;
+        letter-spacing: -0.02em;
+      }
+
+      p {
+        margin: 0;
+        max-width: 48ch;
+        color: var(--ink-soft);
+        font-size: clamp(16px, 2.3vw, 19px);
+        line-height: 1.45;
+      }
+
+      .actions {
+        margin-top: 26px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        border-radius: 999px;
+        padding: 0 18px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+      }
+
+      .btn-primary {
+        color: #1a1423;
+        background: linear-gradient(135deg, #ffb579, #f1934e);
+      }
+
+      .btn-secondary {
+        color: var(--ink);
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        background: rgba(255, 255, 255, 0.05);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="panel" aria-label="404 content">
+      <p class="kicker">Error 404</p>
+      <h1>This page does not exist.</h1>
+      <p>
+        The link may be outdated or mistyped. Explore our services or contact us
+        directly and we can point you to the right place.
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="index.html">Go to Homepage</a>
+        <a class="btn btn-secondary" href="index.html#services"
+          >View Services</a
+        >
+        <a
+          class="btn btn-secondary"
+          href="mailto:hello@eastbrite.com?subject=Website%20Question%20-%20Eastbrite"
+          >Contact Eastbrite</a
+        >
+      </div>
+    </main>
+  </body>
+</html>

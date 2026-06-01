@@ -100,8 +100,12 @@
   background: rgba(255, 255, 255, 0.04);
   color: rgba(255, 242, 228, 0.95);
   font-size: 26px;
-  line-height: 0;
+  line-height: 1;
   cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ── Services Card ───────────────────────── */
@@ -164,6 +168,16 @@
 .service-item:hover {
   background: rgba(37, 34, 58, 0.52);
   border-color: rgba(255, 186, 128, 0.45);
+}
+
+.service-item-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.service-item-link:focus-visible {
+  outline: 2px solid rgba(255, 184, 124, 0.78);
+  outline-offset: 2px;
 }
 
 .service-icon {

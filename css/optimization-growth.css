@@ -1,0 +1,398 @@
+:root {
+  --og-ink: #f2eef2;
+  --og-ink-soft: rgba(237, 232, 240, 0.82);
+  --og-ink-muted: rgba(220, 214, 228, 0.64);
+  --og-accent: #9cd16a;
+  --og-accent-warm: #f2aa74;
+  --sp-ink: #f2eef2;
+  --sp-ink-soft: rgba(237, 232, 240, 0.82);
+  --sp-accent: #9cd16a;
+  --og-bg: #100d21;
+  --og-panel: #18132b;
+  --og-panel-soft: #211b38;
+  --og-border: rgba(255, 255, 255, 0.12);
+}
+
+@font-face {
+  font-family: "The Seasons Bold";
+  src: url("https://db.onlinewebfonts.com/t/f7d34c9e4c3102c89048d775c27a78f3.eot");
+  src:
+    url("https://db.onlinewebfonts.com/t/f7d34c9e4c3102c89048d775c27a78f3.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/f7d34c9e4c3102c89048d775c27a78f3.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/f7d34c9e4c3102c89048d775c27a78f3.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/f7d34c9e4c3102c89048d775c27a78f3.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/f7d34c9e4c3102c89048d775c27a78f3.svg#The Seasons Bold")
+      format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  color: var(--og-ink);
+  background:
+    radial-gradient(
+      circle at 10% 9%,
+      rgba(156, 209, 106, 0.16),
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 90% 9%,
+      rgba(242, 170, 116, 0.14),
+      transparent 46%
+    ),
+    var(--og-bg);
+}
+
+.og-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 24px 34px;
+}
+
+.og-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border: 1px solid var(--og-border);
+  border-radius: 18px;
+  padding: 14px 18px;
+  background: rgba(23, 19, 40, 0.72);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 12px;
+  z-index: 20;
+}
+
+.og-brand {
+  color: var(--og-ink);
+  text-decoration: none;
+  font-family: "The Seasons Bold", serif;
+  font-size: 28px;
+  letter-spacing: -0.01em;
+}
+
+.og-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.og-nav a {
+  color: var(--og-ink-soft);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.og-nav a:hover {
+  color: var(--og-ink);
+}
+
+.og-top-cta,
+.og-primary-btn {
+  border: 1px solid rgba(156, 209, 106, 0.62);
+  color: #f9fff1;
+  text-decoration: none;
+  background:
+    radial-gradient(
+      120% 120% at 10% 5%,
+      rgba(156, 209, 106, 0.35),
+      rgba(35, 31, 60, 0.72)
+    ),
+    rgba(22, 20, 39, 0.75);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "The Seasons Bold", serif;
+  letter-spacing: 0.01em;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.og-top-cta {
+  min-height: 40px;
+  padding: 0 18px;
+  font-size: 15px;
+}
+
+.og-primary-btn {
+  min-height: 48px;
+  padding: 0 22px;
+  font-size: 17px;
+}
+
+.og-top-cta:hover,
+.og-primary-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(156, 209, 106, 0.24);
+}
+
+.og-kicker {
+  margin: 0;
+  color: rgba(156, 209, 106, 0.95);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.og-hero {
+  padding: 56px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.og-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(130deg, rgba(156, 209, 106, 0.15), transparent 42%),
+    linear-gradient(320deg, rgba(242, 170, 116, 0.13), transparent 44%);
+  pointer-events: none;
+}
+
+.og-hero h1 {
+  margin: 16px 0 0;
+  max-width: 14ch;
+  font-family: "The Seasons Bold", serif;
+  font-size: clamp(42px, 6.6vw, 70px);
+  line-height: 0.95;
+  letter-spacing: -0.018em;
+  position: relative;
+}
+
+.og-hero-sub {
+  margin: 22px 0 0;
+  max-width: 60ch;
+  color: var(--og-ink-soft);
+  line-height: 1.6;
+  font-size: 18px;
+  position: relative;
+}
+
+.og-hero .og-primary-btn {
+  margin-top: 28px;
+  position: relative;
+}
+
+.og-intro {
+  padding: 42px 38px;
+}
+
+.og-intro h2 {
+  margin: 0;
+  font-family: "The Seasons Bold", serif;
+  font-size: 42px;
+  line-height: 0.98;
+  max-width: 15ch;
+}
+
+.og-intro-lead {
+  margin: 14px 0 0;
+  color: rgba(156, 209, 106, 0.95);
+  font-size: 30px;
+  font-family: "The Seasons Bold", serif;
+}
+
+.og-questions {
+  padding: 38px;
+  background:
+    linear-gradient(145deg, rgba(156, 209, 106, 0.14), rgba(25, 20, 41, 0.92)),
+    rgba(19, 16, 33, 0.88);
+}
+
+.og-questions h2 {
+  margin: 0;
+  font-family: "The Seasons Bold", serif;
+  font-size: 38px;
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+}
+
+.og-questions ul {
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.og-questions li {
+  margin: 0;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(25, 20, 42, 0.82);
+  color: var(--og-ink-soft);
+}
+
+.og-optimize-grid {
+  margin-top: 22px;
+}
+
+.og-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  background: var(--og-panel);
+  padding: 20px;
+}
+
+.og-card h3 {
+  margin: 0;
+  font-family: "The Seasons Bold", serif;
+  font-size: 26px;
+  line-height: 1;
+}
+
+.og-card ul {
+  margin: 14px 0 0;
+  padding-left: 18px;
+  color: var(--og-ink-soft);
+  line-height: 1.55;
+}
+
+.og-card li + li {
+  margin-top: 7px;
+}
+
+.og-signs-list {
+  margin: 0;
+  padding: 18px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--og-panel-soft);
+  list-style: none;
+  display: grid;
+  gap: 11px;
+}
+
+.og-signs-list li {
+  color: var(--og-ink-soft);
+  line-height: 1.5;
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  gap: 10px;
+  align-items: start;
+}
+
+.og-signs-list li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  margin-top: 7px;
+  border-radius: 50%;
+  background: rgba(156, 209, 106, 0.95);
+  box-shadow: 0 0 16px rgba(156, 209, 106, 0.5);
+}
+
+.og-process-grid {
+  margin-top: 22px;
+}
+
+.og-step {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  background: var(--og-panel);
+  padding: 20px;
+}
+
+.og-step-num {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  color: rgba(156, 209, 106, 0.95);
+}
+
+.og-step h3 {
+  margin: 10px 0 0;
+  font-family: "The Seasons Bold", serif;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.og-step p {
+  margin: 12px 0 0;
+  color: var(--og-ink-soft);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.og-deliverables-grid {
+  margin-top: 18px;
+}
+
+.og-deliverables-grid p {
+  margin: 0;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--og-panel);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--og-ink-soft);
+}
+
+.og-final-cta {
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 52px;
+  background:
+    linear-gradient(150deg, rgba(156, 209, 106, 0.15), rgba(22, 19, 39, 0.92)),
+    rgba(18, 15, 32, 0.88);
+}
+
+.og-final-cta p {
+  margin: 18px auto 0;
+  max-width: 56ch;
+  color: var(--og-ink-soft);
+  line-height: 1.6;
+}
+
+.og-final-cta .og-primary-btn {
+  margin-top: 24px;
+}
+
+@media (max-width: 720px) {
+  .og-hero,
+  .og-intro,
+  .og-questions,
+  .og-optimize,
+  .og-process,
+  .og-deliverables,
+  .og-why,
+  .og-final-cta,
+  .og-signs {
+    padding: 26px 20px;
+  }
+
+  .og-intro h2,
+  .og-questions h2,
+  .og-optimize h2,
+  .og-process h2,
+  .og-deliverables h2,
+  .og-why h2,
+  .og-final-cta h2,
+  .og-signs h2 {
+    font-size: 33px;
+  }
+
+  .og-optimize-grid,
+  .og-questions ul,
+  .og-deliverables-grid,
+  .og-process-grid {
+    grid-template-columns: 1fr;
+  }
+}

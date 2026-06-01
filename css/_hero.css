@@ -47,6 +47,7 @@
 .primary-cta {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   height: 48px;
   border-radius: 999px;
@@ -66,6 +67,7 @@
   transition:
     box-shadow 0.35s ease,
     transform 0.3s ease;
+  text-decoration: none;
 }
 
 .primary-cta:hover {

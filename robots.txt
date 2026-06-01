@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eastbrite.com/sitemap.xml
