@@ -11,23 +11,48 @@
   justify-content: space-between;
 }
 
-.hero-copy h1 {
-  margin: 0 0 24px 0;
-  font-family: "The Seasons Bold", serif;
-  font-size: 82px;
-  line-height: 0.84;
-  letter-spacing: -0.025em;
-  text-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+.hero-copy {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
 }
 
-.hero-copy p {
+.hero-copy::before {
+  content: "";
+  position: absolute;
+  top: -26px;
+  left: -34px;
+  width: min(780px, 72vw);
+  height: 290px;
+  border-radius: 36px;
+  filter: blur(2px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero-copy h1 {
+  margin: 0 0 24px 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  text-shadow: 0 16px 30px rgba(0, 0, 0, 0.48);
+}
+
+.hero-subheading {
   margin: 0 0 28px 0;
   max-width: 470px;
   font-family: "Poppins", sans-serif;
-  font-size: 34px;
-  line-height: 1.18;
+  font-size: 42px;
+  line-height: 1.2;
   color: var(--ink-soft);
-  font-weight: 300;
+  font-weight: 200;
+}
+
+.hero-copy h1 em {
+  font-style: italic;
+  font-weight: inherit;
 }
 
 .tags {

@@ -18,10 +18,19 @@
 }
 
 .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-family: "The Seasons Bold", serif;
   font-size: 32px;
   line-height: 0.9;
   letter-spacing: -0.02em;
+}
+
+.brand-logo {
+  height: 32px;
+  width: auto;
+  display: block;
 }
 
 .agency-pill {

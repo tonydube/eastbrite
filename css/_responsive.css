@@ -20,11 +20,12 @@
   }
 
   .hero-copy h1 {
-    font-size: 68px;
+    font-size: 56px;
+    line-height: 1.15;
   }
 
-  .hero-copy p {
-    font-size: 20px;
+  .hero-subheading {
+    font-size: 32px;
     max-width: 430px;
   }
 
@@ -235,6 +236,14 @@
     min-width: 0;
   }
 
+  .hero-copy::before {
+    top: -20px;
+    left: 50%;
+    width: min(660px, 96vw);
+    height: 260px;
+    transform: translateX(-50%);
+  }
+
   .hero-agency-pill {
     display: inline-flex;
     margin-bottom: 18px;
@@ -247,20 +256,19 @@
 
   .hero-copy h1 {
     display: block;
-    font-size: clamp(40px, 10vw, 56px);
-    line-height: 0.95;
+    font-size: clamp(32px, 8vw, 48px);
+    line-height: 1.1;
     max-width: 12ch;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
   }
 
-  .hero-copy p {
-    font-size: 38px;
-    line-height: 1.14;
-    font-weight: 300;
+  .hero-subheading {
+    font-size: 24px;
+    line-height: 1.2;
     margin-bottom: 20px;
-    max-width: 16ch;
+    max-width: 20ch;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -664,19 +672,24 @@
 
   .hero-copy h1 {
     display: block;
-    font-size: clamp(34px, 11vw, 44px);
-    line-height: 0.98;
-    max-width: 11ch;
+    font-size: clamp(28px, 9vw, 36px);
+    line-height: 1.1;
+    max-width: 15ch;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
   }
 
-  .hero-copy p {
-    font-size: 46px;
-    line-height: 1.12;
-    font-weight: 300;
-    max-width: 16ch;
+  .hero-copy::before {
+    top: -18px;
+    width: min(560px, 98vw);
+    height: 230px;
+  }
+
+  .hero-subheading {
+    font-size: 18px;
+    line-height: 1.2;
+    max-width: 28ch;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
