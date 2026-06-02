@@ -31,7 +31,7 @@
   inset: -4px;
   background: url("../assets/images/backgrounds/background2.png") center 58% /
     cover no-repeat;
-  filter: saturate(90%) brightness(85%) contrast(95%);
+  filter: saturate(88%) brightness(72%) contrast(94%);
   transform: scale(1);
   animation: bg-slow-zoom 36s ease-out forwards;
   will-change: transform;
@@ -43,12 +43,19 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    ellipse at 50% 44%,
-    transparent 20%,
-    rgba(6, 5, 18, 0.45) 55%,
-    rgba(4, 3, 14, 0.82) 100%
-  );
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(12, 10, 24, 0.44) 0%,
+      rgba(12, 10, 24, 0.24) 24%,
+      rgba(12, 10, 24, 0) 48%
+    ),
+    radial-gradient(
+      ellipse at 50% 46%,
+      rgba(10, 8, 22, 0.24) 10%,
+      rgba(8, 7, 20, 0.58) 58%,
+      rgba(5, 4, 16, 0.88) 100%
+    );
   z-index: 1;
   pointer-events: none;
 }
