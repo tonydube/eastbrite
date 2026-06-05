@@ -85,6 +85,10 @@
   position: relative;
 }
 
+.work-mock-link {
+  display: block;
+}
+
 .work-card--featured .work-mock {
   height: 450px;
 }
@@ -330,6 +334,24 @@
   font-size: 13.5px;
   line-height: 1.45;
   color: rgba(219, 211, 228, 0.76);
+}
+
+.work-demo-link {
+  margin-top: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(247, 167, 94, 0.95);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.work-demo-link:hover {
+  opacity: 0.72;
 }
 
 .work-metric {
