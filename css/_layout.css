@@ -29,8 +29,8 @@
   content: "";
   position: absolute;
   inset: -4px;
-  background: url("../assets/images/backgrounds/background2.png") center 58% /
-    cover no-repeat;
+  background: url("../assets/images/backgrounds/eastbrite-hero.png") center
+    58% / cover no-repeat;
   filter: saturate(88%) brightness(72%) contrast(94%);
   transform: scale(1);
   animation: bg-slow-zoom 36s ease-out forwards;

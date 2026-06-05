@@ -20,13 +20,9 @@
   }
 
   .hero-copy h1 {
-    font-size: 56px;
-    line-height: 1.15;
-  }
-
-  .hero-subheading {
-    font-size: 32px;
-    max-width: 430px;
+    font-size: clamp(50px, 6vw, 72px);
+    line-height: 1.1;
+    max-width: 15ch;
   }
 
   .feature-row {
@@ -256,19 +252,9 @@
 
   .hero-copy h1 {
     display: block;
-    font-size: clamp(32px, 8vw, 48px);
+    font-size: clamp(38px, 8.4vw, 56px);
     line-height: 1.1;
-    max-width: 12ch;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
-
-  .hero-subheading {
-    font-size: 24px;
-    line-height: 1.2;
-    margin-bottom: 20px;
-    max-width: 20ch;
+    max-width: 16ch;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -672,9 +658,9 @@
 
   .hero-copy h1 {
     display: block;
-    font-size: clamp(28px, 9vw, 36px);
+    font-size: clamp(32px, 9.4vw, 44px);
     line-height: 1.1;
-    max-width: 15ch;
+    max-width: 16ch;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -684,15 +670,6 @@
     top: -18px;
     width: min(560px, 98vw);
     height: 230px;
-  }
-
-  .hero-subheading {
-    font-size: 18px;
-    line-height: 1.2;
-    max-width: 28ch;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
   }
 
   .tags {
