@@ -1171,12 +1171,19 @@
           <div class="gallery-item" data-idx="0">
             <video
               id="gallery-video"
-              src="images/steak.mp4"
               muted
               playsinline
-              preload="auto"
+              webkit-playsinline="true"
+              preload="metadata"
+              poster="images/ribeye.png"
               aria-hidden="true"
-            ></video>
+            >
+              <source
+                src="images/steak-h264.mp4"
+                type='video/mp4; codecs="avc1.640028"'
+              />
+              <source src="images/steak.mp4" type='video/mp4; codecs="hvc1"' />
+            </video>
           </div>
         </div>
 
@@ -1778,8 +1785,53 @@
       // Scale multipliers per layer (mirrors the React component's scale4→scale9 assignments)
       const LAYER_SCALES = [4, 5, 6, 5, 6, 8, 9];
 
-      // Ensure video shows first frame immediately
-      if (galleryVideo) galleryVideo.currentTime = 0;
+      // Prime first frame safely after metadata is available.
+      function primeGalleryVideoFrame() {
+        if (!galleryVideo || galleryVideo.readyState < 1) return;
+        try {
+          galleryVideo.currentTime = 0;
+        } catch {
+          // iOS Safari can throw before seekable ranges are ready.
+        }
+      }
+
+      function seekGalleryVideo(progress) {
+        if (
+          !galleryVideo ||
+          galleryVideo.readyState < 1 ||
+          !Number.isFinite(galleryVideo.duration) ||
+          galleryVideo.duration <= 0
+        ) {
+          return;
+        }
+
+        const target = Math.min(
+          Math.max(progress * galleryVideo.duration, 0),
+          Math.max(galleryVideo.duration - 0.016, 0),
+        );
+
+        try {
+          galleryVideo.currentTime = target;
+        } catch {
+          // Keep scroll/zoom functional even when a seek attempt fails.
+        }
+      }
+
+      if (galleryVideo) {
+        galleryVideo.muted = true;
+        galleryVideo.playsInline = true;
+        galleryVideo.addEventListener(
+          "loadedmetadata",
+          primeGalleryVideoFrame,
+          {
+            once: true,
+          },
+        );
+        galleryVideo.addEventListener("canplay", primeGalleryVideoFrame, {
+          once: true,
+        });
+        galleryVideo.load();
+      }
 
       // ── Gallery scroll handler ─────────────────────────────────────
       function onScroll() {
@@ -1813,13 +1865,7 @@
         });
 
         // Steak video: scrub from frame 0 → end as progress 0 → 1
-        if (
-          galleryVideo &&
-          galleryVideo.readyState >= 1 &&
-          galleryVideo.duration > 0
-        ) {
-          galleryVideo.currentTime = progress * galleryVideo.duration;
-        }
+        seekGalleryVideo(progress);
 
         // Hero text + dark overlay: both visible on load, fade out as scroll begins (0→20%)
         const cp = Math.max(0, 1 - progress / 0.2);
