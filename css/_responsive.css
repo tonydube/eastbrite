@@ -278,14 +278,18 @@
     text-align: center;
   }
 
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
   .primary-cta {
     display: flex;
     width: fit-content;
     height: 52px;
     padding: 0 12px 0 22px;
     font-size: 17px;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .cta-arrow {
@@ -701,8 +705,6 @@
     justify-content: flex-start;
     padding: 0 12px 0 20px;
     font-size: 16px;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .cta-arrow {

@@ -6,9 +6,9 @@
   --sp-ink: #f2eef2;
   --sp-ink-soft: rgba(237, 231, 240, 0.82);
   --sp-accent: #f3a164;
-  --bd-bg: #100d21;
-  --bd-panel: #18132b;
-  --bd-panel-soft: #201a36;
+  --bd-bg: #0d0b09;
+  --bd-panel: #161210;
+  --bd-panel-soft: #1c1612;
   --bd-border: rgba(255, 255, 255, 0.12);
 }
 
@@ -46,7 +46,7 @@ body {
     ),
     radial-gradient(
       circle at 88% 10%,
-      rgba(73, 116, 255, 0.12),
+      rgba(232, 134, 78, 0.06),
       transparent 42%
     ),
     var(--bd-bg);
@@ -67,7 +67,7 @@ body {
   border: 1px solid var(--bd-border);
   border-radius: 18px;
   padding: 14px 18px;
-  background: rgba(23, 19, 40, 0.72);
+  background: rgba(18, 14, 10, 0.78);
   backdrop-filter: blur(12px);
   position: sticky;
   top: 12px;
@@ -108,9 +108,9 @@ body {
     radial-gradient(
       120% 120% at 10% 5%,
       rgba(255, 171, 108, 0.38),
-      rgba(38, 31, 63, 0.7)
+      rgba(18, 12, 7, 0.7)
     ),
-    rgba(22, 20, 39, 0.75);
+    rgba(16, 11, 7, 0.75);
   border-radius: 999px;
   display: inline-flex;
   align-items: center;
@@ -160,7 +160,7 @@ body {
   inset: 0;
   background:
     linear-gradient(130deg, rgba(255, 186, 131, 0.12), transparent 42%),
-    linear-gradient(320deg, rgba(98, 149, 255, 0.14), transparent 44%);
+    linear-gradient(320deg, rgba(232, 134, 78, 0.08), transparent 44%);
   pointer-events: none;
 }
 
@@ -210,8 +210,8 @@ body {
 .bd-questions {
   padding: 38px;
   background:
-    linear-gradient(145deg, rgba(255, 172, 109, 0.1), rgba(25, 20, 41, 0.92)),
-    rgba(19, 16, 33, 0.88);
+    linear-gradient(145deg, rgba(255, 172, 109, 0.1), rgba(14, 10, 7, 0.92)),
+    rgba(12, 9, 6, 0.88);
 }
 
 .bd-questions h2 {
@@ -236,7 +236,7 @@ body {
   padding: 14px 16px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(25, 20, 42, 0.82);
+  background: rgba(18, 13, 9, 0.82);
   color: var(--bd-ink-soft);
 }
 
@@ -349,8 +349,8 @@ body {
   padding-top: 50px;
   padding-bottom: 52px;
   background:
-    linear-gradient(150deg, rgba(245, 164, 101, 0.12), rgba(22, 19, 39, 0.92)),
-    rgba(18, 15, 32, 0.88);
+    linear-gradient(150deg, rgba(245, 164, 101, 0.12), rgba(14, 10, 7, 0.92)),
+    rgba(12, 9, 6, 0.88);
 }
 
 .bd-final-cta p {

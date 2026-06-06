@@ -7,9 +7,9 @@
   --sp-ink: #f2eef2;
   --sp-ink-soft: rgba(236, 231, 240, 0.82);
   --sp-accent: #6fc0c7;
-  --wd-bg: #100d21;
-  --wd-panel: #18132b;
-  --wd-panel-soft: #211b38;
+  --wd-bg: #0d0b09;
+  --wd-panel: #161210;
+  --wd-panel-soft: #1c1612;
   --wd-border: rgba(255, 255, 255, 0.12);
 }
 
@@ -68,7 +68,7 @@ body {
   border: 1px solid var(--wd-border);
   border-radius: 18px;
   padding: 14px 18px;
-  background: rgba(23, 19, 40, 0.72);
+  background: rgba(18, 14, 10, 0.78);
   backdrop-filter: blur(12px);
   position: sticky;
   top: 12px;
@@ -109,9 +109,9 @@ body {
     radial-gradient(
       120% 120% at 10% 5%,
       rgba(111, 192, 199, 0.36),
-      rgba(35, 31, 60, 0.72)
+      rgba(18, 12, 7, 0.72)
     ),
-    rgba(22, 20, 39, 0.75);
+    rgba(16, 11, 7, 0.75);
   border-radius: 999px;
   display: inline-flex;
   align-items: center;
@@ -211,8 +211,8 @@ body {
 .wd-questions {
   padding: 38px;
   background:
-    linear-gradient(145deg, rgba(111, 192, 199, 0.14), rgba(25, 20, 41, 0.92)),
-    rgba(19, 16, 33, 0.88);
+    linear-gradient(145deg, rgba(111, 192, 199, 0.14), rgba(14, 10, 7, 0.92)),
+    rgba(12, 9, 6, 0.88);
 }
 
 .wd-questions h2 {
@@ -237,7 +237,7 @@ body {
   padding: 14px 16px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(25, 20, 42, 0.82);
+  background: rgba(18, 13, 9, 0.82);
   color: var(--wd-ink-soft);
 }
 
@@ -350,8 +350,8 @@ body {
   padding-top: 50px;
   padding-bottom: 52px;
   background:
-    linear-gradient(150deg, rgba(111, 192, 199, 0.15), rgba(22, 19, 39, 0.92)),
-    rgba(18, 15, 32, 0.88);
+    linear-gradient(150deg, rgba(111, 192, 199, 0.15), rgba(14, 10, 7, 0.92)),
+    rgba(12, 9, 6, 0.88);
 }
 
 .wd-final-cta p {
