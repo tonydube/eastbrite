@@ -1,0 +1,1365 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Meridian — Lakeside Hotel</title>
+    <meta
+      name="description"
+      content="The Meridian is a luxury lakeside hotel where stillness meets refinement. Lake suites, spa, fine dining, and private excursions since 1924."
+    />
+
+    <!-- Preconnect fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      /* ─── Design tokens ──────────────────────────────────── */
+      :root {
+        --slate: #4a5358;
+        --charcoal: #232629;
+        --champagne: #d8c6a5;
+        --ivory: #f7f4ee;
+        --stone: #e5e2dc;
+        --dark: #1a1d1f;
+      }
+
+      /* ─── Base ───────────────────────────────────────────── */
+      html {
+        scroll-behavior: smooth;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        background-color: var(--ivory);
+        color: var(--charcoal);
+        overflow-x: hidden;
+      }
+
+      /* ─── Fonts ──────────────────────────────────────────── */
+      .font-cormorant {
+        font-family: "Cormorant", serif;
+      }
+      .font-montserrat {
+        font-family: "Montserrat", sans-serif;
+      }
+
+      /* ─── Section label ──────────────────────────────────── */
+      .label {
+        font-family: "Montserrat", sans-serif;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: var(--champagne);
+        display: block;
+      }
+
+      /* ─── Reveal animation ───────────────────────────────── */
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .delay-1 {
+        transition-delay: 130ms;
+      }
+      .delay-2 {
+        transition-delay: 260ms;
+      }
+      .delay-3 {
+        transition-delay: 390ms;
+      }
+      .delay-4 {
+        transition-delay: 520ms;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .reveal,
+        .reveal.visible {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+        .hero-animate {
+          animation: none !important;
+          opacity: 1 !important;
+        }
+      }
+
+      /* ─── Hero entrance animations ───────────────────────── */
+      @keyframes heroIn {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .hero-label {
+        animation: heroIn 1s ease-out 0.4s both;
+      }
+      .hero-heading {
+        animation: heroIn 1.3s cubic-bezier(0.16, 1, 0.3, 1) 0.7s both;
+      }
+      .hero-sub {
+        animation: heroIn 1s ease-out 1.1s both;
+      }
+      .hero-cta {
+        animation: heroIn 1s ease-out 1.4s both;
+      }
+      .hero-scroll {
+        animation: heroIn 1s ease-out 2.1s both;
+      }
+
+      /* ─── Scroll line ────────────────────────────────────── */
+      @keyframes scrollPulse {
+        0% {
+          transform: translateY(-100%);
+          opacity: 0;
+        }
+        20% {
+          opacity: 1;
+        }
+        80% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(300%);
+          opacity: 0;
+        }
+      }
+      .scroll-line {
+        animation: scrollPulse 2.2s ease-in-out infinite;
+      }
+
+      /* ─── Navbar ─────────────────────────────────────────── */
+      #navbar {
+        transition:
+          background-color 700ms ease,
+          backdrop-filter 700ms ease,
+          box-shadow 700ms ease;
+      }
+      #navbar.scrolled {
+        background-color: rgba(247, 244, 238, 0.94);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        box-shadow: 0 1px 0 rgba(216, 198, 165, 0.3);
+      }
+      #navbar.scrolled .nav-link {
+        color: var(--slate) !important;
+      }
+      #navbar.scrolled .nav-logo {
+        color: var(--charcoal) !important;
+      }
+      #navbar.scrolled .nav-reserve {
+        border-color: var(--charcoal) !important;
+        color: var(--charcoal) !important;
+      }
+      #navbar.scrolled .nav-reserve:hover {
+        background-color: var(--charcoal) !important;
+        color: var(--ivory) !important;
+      }
+      #navbar.scrolled .hamburger {
+        color: var(--charcoal) !important;
+      }
+
+      /* ─── Buttons ────────────────────────────────────────── */
+      .btn {
+        display: inline-block;
+        padding: 13px 36px;
+        border: 1px solid currentColor;
+        font-family: "Montserrat", sans-serif;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition:
+          background-color 350ms ease,
+          color 350ms ease;
+        text-decoration: none;
+      }
+      .btn-light {
+        color: var(--champagne);
+        border-color: var(--champagne);
+      }
+      .btn-light:hover {
+        background-color: var(--champagne);
+        color: var(--charcoal);
+      }
+      .btn-dark {
+        color: var(--charcoal);
+        border-color: var(--charcoal);
+      }
+      .btn-dark:hover {
+        background-color: var(--charcoal);
+        color: var(--ivory);
+      }
+      .btn-champagne-on-dark {
+        color: var(--champagne);
+        border-color: var(--champagne);
+      }
+      .btn-champagne-on-dark:hover {
+        background-color: var(--champagne);
+        color: var(--charcoal);
+      }
+
+      /* ─── Divider ────────────────────────────────────────── */
+      .divider {
+        width: 36px;
+        height: 1px;
+        background-color: var(--champagne);
+        display: block;
+      }
+
+      /* ─── Room cards ─────────────────────────────────────── */
+      .room-img {
+        transition: transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .room-card:hover .room-img {
+        transform: scale(1.05);
+      }
+
+      /* ─── Experience tiles ───────────────────────────────── */
+      .exp-img {
+        transition: transform 1200ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .exp-tile:hover .exp-img {
+        transform: scale(1.04);
+      }
+      .exp-overlay {
+        background: linear-gradient(
+          to top,
+          rgba(35, 38, 41, 0.9) 0%,
+          rgba(35, 38, 41, 0.1) 60%
+        );
+      }
+
+      /* ─── Form inputs ────────────────────────────────────── */
+      .form-input {
+        width: 100%;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid rgba(216, 198, 165, 0.25);
+        padding: 12px 0;
+        font-family: "Montserrat", sans-serif;
+        font-size: 13px;
+        color: rgba(247, 244, 238, 0.8);
+        outline: none;
+        transition: border-color 300ms ease;
+        appearance: none;
+        -webkit-appearance: none;
+      }
+      .form-input:focus {
+        border-bottom-color: var(--champagne);
+      }
+      .form-input::placeholder {
+        color: rgba(247, 244, 238, 0.22);
+      }
+      .form-input option {
+        background-color: #232629;
+      }
+      .form-input[type="date"] {
+        color-scheme: dark;
+      }
+      .form-input[type="date"]::-webkit-calendar-picker-indicator {
+        filter: invert(0.5) sepia(1) saturate(0.5);
+        cursor: pointer;
+      }
+
+      /* ─── Mobile menu ────────────────────────────────────── */
+      #mobile-menu {
+        transform: translateX(100%);
+        transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      #mobile-menu.open {
+        transform: translateX(0);
+      }
+
+      /* ─── Scrollbar ──────────────────────────────────────── */
+      ::-webkit-scrollbar {
+        width: 3px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--ivory);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--champagne);
+      }
+
+      /* ─── Quote section ──────────────────────────────────── */
+      .quote-overlay {
+        background: linear-gradient(
+          to bottom,
+          rgba(35, 38, 41, 0.25) 0%,
+          rgba(35, 38, 41, 0.55) 100%
+        );
+      }
+
+      /* ─── Frame offset ───────────────────────────────────── */
+      .frame-offset {
+        position: absolute;
+        bottom: -12px;
+        right: -12px;
+        width: 100%;
+        height: 100%;
+        border: 1px solid rgba(216, 198, 165, 0.5);
+        pointer-events: none;
+      }
+    </style>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              slate: "#4A5358",
+              charcoal: "#232629",
+              champagne: "#D8C6A5",
+              ivory: "#F7F4EE",
+              stone: "#E5E2DC",
+              dark: "#1a1d1f",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body class="font-montserrat antialiased">
+    <!-- ════════════════════════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════════════════════════ -->
+    <nav
+      id="navbar"
+      class="fixed top-0 left-0 right-0 z-50 px-8 md:px-14 lg:px-20 py-6 flex items-center justify-between"
+    >
+      <a
+        href="#hero"
+        class="nav-logo font-cormorant text-white text-lg tracking-[0.2em] font-light transition-colors duration-500"
+        style="letter-spacing: 0.22em"
+      >
+        THE MERIDIAN
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden md:flex items-center gap-10">
+        <a
+          href="#experience"
+          class="nav-link font-montserrat text-xs font-medium tracking-[0.22em] uppercase text-white/75 hover:text-white transition-colors duration-300"
+          >Experience</a
+        >
+        <a
+          href="#stay"
+          class="nav-link font-montserrat text-xs font-medium tracking-[0.22em] uppercase text-white/75 hover:text-white transition-colors duration-300"
+          >Stay</a
+        >
+        <a
+          href="#amenities"
+          class="nav-link font-montserrat text-xs font-medium tracking-[0.22em] uppercase text-white/75 hover:text-white transition-colors duration-300"
+          >Amenities</a
+        >
+        <a
+          href="#reserve"
+          class="nav-reserve btn btn-light text-xs"
+          style="padding: 10px 28px"
+          >Reserve</a
+        >
+      </div>
+
+      <!-- Hamburger -->
+      <button
+        id="hamburger"
+        class="hamburger md:hidden text-white focus:outline-none"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        <svg
+          width="22"
+          height="16"
+          viewBox="0 0 22 16"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.4"
+          stroke-linecap="round"
+        >
+          <line x1="0" y1="2" x2="22" y2="2" />
+          <line x1="0" y1="8" x2="22" y2="8" />
+          <line x1="0" y1="14" x2="22" y2="14" />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-40 flex flex-col items-center justify-center gap-10"
+      style="background-color: rgba(35, 38, 41, 0.97)"
+      aria-hidden="true"
+    >
+      <button
+        id="menu-close"
+        class="absolute top-6 right-8 text-white/60 hover:text-white transition-colors"
+        aria-label="Close menu"
+      >
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 22 22"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.4"
+          stroke-linecap="round"
+        >
+          <line x1="2" y1="2" x2="20" y2="20" />
+          <line x1="20" y1="2" x2="2" y2="20" />
+        </svg>
+      </button>
+      <a
+        href="#experience"
+        class="m-nav font-cormorant text-white text-4xl italic font-light tracking-wide hover:text-champagne transition-colors duration-300"
+        >Experience</a
+      >
+      <a
+        href="#stay"
+        class="m-nav font-cormorant text-white text-4xl italic font-light tracking-wide hover:text-champagne transition-colors duration-300"
+        >Stay</a
+      >
+      <a
+        href="#amenities"
+        class="m-nav font-cormorant text-white text-4xl italic font-light tracking-wide hover:text-champagne transition-colors duration-300"
+        >Amenities</a
+      >
+      <a href="#reserve" class="m-nav btn btn-light mt-4">Reserve Your Stay</a>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════════
+       § 1 · HERO
+  ════════════════════════════════════════════════════════ -->
+    <section
+      id="hero"
+      class="relative w-full h-screen overflow-hidden flex items-center justify-center"
+    >
+      <!-- Parallax background -->
+      <div
+        id="hero-bg"
+        class="absolute inset-0"
+        style="
+          background-image: url(&quot;assets/images/meridian-hero.png&quot;);
+          background-size: cover;
+          background-position: center 40%;
+          transform: scale(1.12);
+          will-change: transform;
+        "
+      ></div>
+
+      <!-- Gradient veil -->
+      <div
+        class="absolute inset-0"
+        style="
+          background: linear-gradient(
+            to bottom,
+            rgba(35, 38, 41, 0.42) 0%,
+            rgba(35, 38, 41, 0.35) 45%,
+            rgba(35, 38, 41, 0.72) 100%
+          );
+        "
+      ></div>
+
+      <!-- Content -->
+      <div class="relative z-10 text-center px-6 flex flex-col items-center">
+        <span class="hero-animate hero-label label text-white/75 mb-8"
+          >Lake Meridian &nbsp;·&nbsp; Est. 1924</span
+        >
+
+        <h1
+          class="hero-animate hero-heading font-cormorant text-white font-light leading-none tracking-[0.12em]"
+          style="
+            font-size: clamp(4.5rem, 14vw, 11rem);
+            text-shadow: 0 4px 60px rgba(0, 0, 0, 0.25);
+          "
+        >
+          THE<br />
+          <em class="italic" style="letter-spacing: 0.18em">Meridian</em>
+        </h1>
+
+        <p
+          class="hero-animate hero-sub font-montserrat text-white/80 text-xs tracking-[0.36em] uppercase mt-7 mb-12"
+        >
+          Where the lake meets eternity
+        </p>
+
+        <a href="#reserve" class="hero-animate hero-cta btn btn-light"
+          >Reserve Your Stay</a
+        >
+      </div>
+
+      <!-- Scroll indicator -->
+      <div
+        class="hero-animate hero-scroll absolute bottom-10 right-10 flex flex-col items-center gap-3"
+      >
+        <span
+          class="font-montserrat text-white/60 text-xs tracking-[0.3em] uppercase"
+          >Scroll</span
+        >
+        <div
+          class="relative overflow-hidden"
+          style="
+            width: 1px;
+            height: 52px;
+            background: rgba(255, 255, 255, 0.12);
+          "
+        >
+          <div
+            class="scroll-line absolute inset-x-0 top-0"
+            style="height: 42%; background: rgba(255, 255, 255, 0.65)"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════
+       § 2 · THE EXPERIENCE
+  ════════════════════════════════════════════════════════ -->
+    <section
+      id="experience"
+      class="py-32 md:py-44 px-6 md:px-14 lg:px-24"
+      style="background-color: var(--ivory)"
+    >
+      <div class="max-w-6xl mx-auto">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-28 items-center"
+        >
+          <!-- Image with offset frame -->
+          <div class="reveal relative self-start">
+            <div class="overflow-hidden" style="aspect-ratio: 3/4">
+              <img
+                src="assets/images/meridian-terrace.png"
+                alt="Lakeside terrace at The Meridian, mist over water at dawn"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div class="frame-offset"></div>
+          </div>
+
+          <!-- Text -->
+          <div>
+            <span class="label reveal mb-6">The Experience</span>
+            <span class="divider reveal delay-1 mb-10"></span>
+
+            <h2
+              class="reveal delay-1 font-cormorant font-light text-charcoal leading-[1.1] mb-8"
+              style="
+                font-size: clamp(2.8rem, 5vw, 4.5rem);
+                color: var(--charcoal);
+              "
+            >
+              A stillness<br />you carry<br /><em class="italic">home</em>
+            </h2>
+
+            <p
+              class="reveal delay-2 font-montserrat text-sm leading-[1.95] text-slate mb-5"
+              style="max-width: 430px; color: var(--slate)"
+            >
+              Nestled where the forest meets the lake, The Meridian was built on
+              a single belief: that true luxury is not about abundance — it is
+              about presence. Every detail, from the morning mist over the water
+              to the last ember in the fireplace, is arranged to slow time.
+            </p>
+
+            <p
+              class="reveal delay-3 font-montserrat text-sm leading-[1.95] text-slate mb-14"
+              style="max-width: 430px; color: var(--slate)"
+            >
+              Since 1924, guests have arrived carrying the weight of ordinary
+              life, and left carrying something quieter.
+            </p>
+
+            <a href="#stay" class="reveal delay-4 btn btn-dark inline-block"
+              >Discover the Rooms</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════
+       § 3 · ACCOMMODATIONS
+  ════════════════════════════════════════════════════════ -->
+    <section
+      id="stay"
+      class="py-32 md:py-44 px-6 md:px-14 lg:px-24"
+      style="background-color: var(--stone)"
+    >
+      <div class="max-w-6xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-20">
+          <span class="label reveal mb-6">Accommodations</span>
+          <span class="divider mx-auto reveal mb-10"></span>
+          <h2
+            class="reveal font-cormorant font-light text-charcoal"
+            style="font-size: clamp(2.8rem, 5vw, 4.5rem)"
+          >
+            Rooms &amp; Suites
+          </h2>
+        </div>
+
+        <!-- Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Lake Suite -->
+          <div
+            class="room-card reveal overflow-hidden cursor-pointer"
+            style="background-color: var(--ivory)"
+          >
+            <div class="overflow-hidden" style="aspect-ratio: 4/3">
+              <img
+                src="assets/images/meridian-lake-suite.png"
+                alt="Lake Suite — floor-to-ceiling windows overlooking the water"
+                class="room-img w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-8">
+              <span class="label mb-2">Lake-Facing</span>
+              <h3 class="font-cormorant font-light text-charcoal text-3xl mb-3">
+                Lake Suite
+              </h3>
+              <p
+                class="font-montserrat text-xs text-slate leading-[1.85] mb-7"
+                style="color: var(--slate)"
+              >
+                Floor-to-ceiling glass facing the water. Private terrace. King
+                bed with hand-pressed linen. Deep soaking tub.
+              </p>
+              <div class="flex items-end justify-between">
+                <span class="font-cormorant text-2xl font-light text-charcoal">
+                  From $680
+                  <span
+                    class="font-montserrat text-xs text-slate"
+                    style="font-size: 10px; color: var(--slate)"
+                    >/night</span
+                  >
+                </span>
+                <a
+                  href="#reserve"
+                  class="font-montserrat text-xs tracking-widest uppercase text-slate hover:text-charcoal transition-colors duration-300 cursor-pointer"
+                  style="letter-spacing: 0.22em"
+                  >Enquire →</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Woodland Room -->
+          <div
+            class="room-card reveal delay-1 overflow-hidden cursor-pointer"
+            style="background-color: var(--ivory)"
+          >
+            <div class="overflow-hidden" style="aspect-ratio: 4/3">
+              <img
+                src="assets/images/meridian-woodland-room.png"
+                alt="Woodland Room — natural stone walls and forest views"
+                class="room-img w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-8">
+              <span class="label mb-2">Forest-Side</span>
+              <h3 class="font-cormorant font-light text-charcoal text-3xl mb-3">
+                Woodland Room
+              </h3>
+              <p
+                class="font-montserrat text-xs text-slate leading-[1.85] mb-7"
+                style="color: var(--slate)"
+              >
+                Immersed in the treeline. Natural stone walls. Freestanding
+                copper bath. Rainfall shower. King or twin.
+              </p>
+              <div class="flex items-end justify-between">
+                <span class="font-cormorant text-2xl font-light text-charcoal">
+                  From $420
+                  <span
+                    class="font-montserrat text-xs text-slate"
+                    style="font-size: 10px; color: var(--slate)"
+                    >/night</span
+                  >
+                </span>
+                <a
+                  href="#reserve"
+                  class="font-montserrat text-xs tracking-widest uppercase text-slate hover:text-charcoal transition-colors duration-300 cursor-pointer"
+                  style="letter-spacing: 0.22em"
+                  >Enquire →</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- The Meridian Suite (dark card) -->
+          <div
+            class="room-card reveal delay-2 overflow-hidden cursor-pointer md:col-span-2 lg:col-span-1"
+            style="background-color: var(--charcoal)"
+          >
+            <div class="overflow-hidden" style="aspect-ratio: 4/3">
+              <img
+                src="assets/images/meridian-the-meridian-suite.png"
+                alt="The Meridian Suite — our most exceptional expression of lakeside luxury"
+                class="room-img w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-8">
+              <span class="label mb-2" style="color: var(--champagne)"
+                >Signature</span
+              >
+              <h3
+                class="font-cormorant font-light text-3xl mb-3"
+                style="color: var(--ivory)"
+              >
+                The Meridian Suite
+              </h3>
+              <p
+                class="font-montserrat text-xs leading-[1.85] mb-7"
+                style="color: rgba(247, 244, 238, 0.75)"
+              >
+                Three rooms. Private lake access. Dedicated butler. In-suite
+                fireplace. Champagne on arrival. Our finest expression.
+              </p>
+              <div class="flex items-end justify-between">
+                <span
+                  class="font-cormorant text-2xl font-light"
+                  style="color: var(--champagne)"
+                >
+                  From $1,800
+                  <span
+                    class="font-montserrat"
+                    style="font-size: 10px; color: rgba(247, 244, 238, 0.65)"
+                    >/night</span
+                  >
+                </span>
+                <a
+                  href="#reserve"
+                  class="font-montserrat text-xs tracking-widest uppercase hover:opacity-60 transition-opacity duration-300 cursor-pointer"
+                  style="color: var(--champagne); letter-spacing: 0.22em"
+                  >Enquire →</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════
+       § 4 · AMENITIES & EXPERIENCES
+  ════════════════════════════════════════════════════════ -->
+    <section
+      id="amenities"
+      class="py-32 md:py-44 px-6 md:px-14 lg:px-24"
+      style="background-color: var(--ivory)"
+    >
+      <div class="max-w-6xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-20">
+          <span class="label reveal mb-6">Curated Offerings</span>
+          <span class="divider mx-auto reveal mb-10"></span>
+          <h2
+            class="reveal font-cormorant font-light text-charcoal"
+            style="font-size: clamp(2.8rem, 5vw, 4.5rem)"
+          >
+            Experiences
+          </h2>
+        </div>
+
+        <!-- 2×2 experience grid -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2"
+          style="gap: 2px; background-color: rgba(216, 198, 165, 0.35)"
+        >
+          <!-- Dining -->
+          <div
+            class="exp-tile reveal relative overflow-hidden cursor-pointer"
+            style="aspect-ratio: 4/3"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=85"
+              alt="Pier 1924 — glass-enclosed dining over the lake"
+              class="exp-img w-full h-full object-cover"
+              loading="lazy"
+            />
+            <div class="exp-overlay absolute inset-0"></div>
+            <div class="absolute bottom-0 left-0 p-8 md:p-10">
+              <span class="label mb-2 text-white/65">Restaurant</span>
+              <h3 class="font-cormorant text-4xl font-light text-white mb-2">
+                Pier 1924
+              </h3>
+              <p
+                class="font-montserrat text-xs leading-[1.85] text-white/75"
+                style="max-width: 300px"
+              >
+                Farm-to-table cuisine. Glass-enclosed dining cantilevered over
+                the water. Open from breakfast through late evening.
+              </p>
+            </div>
+          </div>
+
+          <!-- Spa -->
+          <div
+            class="exp-tile reveal delay-1 relative overflow-hidden cursor-pointer"
+            style="aspect-ratio: 4/3"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=85"
+              alt="The Spa at The Meridian — six treatment rooms and hydrotherapy"
+              class="exp-img w-full h-full object-cover"
+              loading="lazy"
+            />
+            <div class="exp-overlay absolute inset-0"></div>
+            <div class="absolute bottom-0 left-0 p-8 md:p-10">
+              <span class="label mb-2 text-white/65">Wellness</span>
+              <h3 class="font-cormorant text-4xl font-light text-white mb-2">
+                The Spa
+              </h3>
+              <p
+                class="font-montserrat text-xs leading-[1.85] text-white/75"
+                style="max-width: 300px"
+              >
+                Six treatment rooms. Cold plunge. Finnish sauna. Hydrotherapy
+                pool. Expert therapists from around the world.
+              </p>
+            </div>
+          </div>
+
+          <!-- Lake activities -->
+          <div
+            class="exp-tile reveal delay-2 relative overflow-hidden cursor-pointer"
+            style="aspect-ratio: 4/3"
+          >
+            <img
+              src="assets/images/meridian-on-the-water.png"
+              alt="Sunrise kayaking and fly fishing on Lake Meridian"
+              class="exp-img w-full h-full object-cover"
+              loading="lazy"
+            />
+            <div class="exp-overlay absolute inset-0"></div>
+            <div class="absolute bottom-0 left-0 p-8 md:p-10">
+              <span class="label mb-2 text-white/65">The Lake</span>
+              <h3 class="font-cormorant text-4xl font-light text-white mb-2">
+                On the Water
+              </h3>
+              <p
+                class="font-montserrat text-xs leading-[1.85] text-white/75"
+                style="max-width: 300px"
+              >
+                Sunrise kayaking. Guided fly fishing. Private sailboat charters.
+                Evening pontoon cruises at golden hour.
+              </p>
+            </div>
+          </div>
+
+          <!-- Excursions -->
+          <div
+            class="exp-tile reveal delay-3 relative overflow-hidden cursor-pointer"
+            style="aspect-ratio: 4/3"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=85"
+              alt="Private mountain excursions and curated trails from The Meridian"
+              class="exp-img w-full h-full object-cover"
+              loading="lazy"
+            />
+            <div class="exp-overlay absolute inset-0"></div>
+            <div class="absolute bottom-0 left-0 p-8 md:p-10">
+              <span class="label mb-2 text-white/65">Beyond the Property</span>
+              <h3 class="font-cormorant text-4xl font-light text-white mb-2">
+                Excursions
+              </h3>
+              <p
+                class="font-montserrat text-xs leading-[1.85] text-white/75"
+                style="max-width: 300px"
+              >
+                Curated trails. Helicopter mountain tours. Private wine country
+                transfers. Everything arranged. Nothing left to chance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════
+       INTERLUDE · QUOTE
+  ════════════════════════════════════════════════════════ -->
+    <section
+      class="relative overflow-hidden"
+      style="height: clamp(340px, 55vw, 680px)"
+    >
+      <img
+        src="assets/images/meridian-quoted.png"
+        alt="The Meridian at golden hour — mist across the lake"
+        class="reveal absolute inset-0 w-full h-full object-cover"
+        style="object-position: center 55%"
+        loading="lazy"
+      />
+      <div
+        class="quote-overlay absolute inset-0 flex flex-col items-center justify-center px-6"
+      >
+        <p
+          class="reveal font-cormorant font-light italic text-white text-center"
+          style="
+            font-size: clamp(1.8rem, 4.5vw, 4rem);
+            max-width: 800px;
+            line-height: 1.35;
+            text-shadow: 0 2px 40px rgba(0, 0, 0, 0.35);
+          "
+        >
+          "The lake never asks where you've been."
+        </p>
+        <span class="reveal delay-1 label text-white/60 mt-7"
+          >— The Meridian</span
+        >
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════
+       § 5 · RESERVATIONS & CONTACT
+  ════════════════════════════════════════════════════════ -->
+    <section
+      id="reserve"
+      class="py-32 md:py-44 px-6 md:px-14 lg:px-24"
+      style="background-color: var(--charcoal)"
+    >
+      <div class="max-w-5xl mx-auto">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-28 items-start"
+        >
+          <!-- Left: info -->
+          <div>
+            <span class="label reveal mb-6" style="color: var(--champagne)"
+              >Reservations</span
+            >
+            <span
+              class="divider reveal mb-10"
+              style="background-color: var(--champagne)"
+            ></span>
+
+            <h2
+              class="reveal font-cormorant font-light leading-tight mb-14"
+              style="font-size: clamp(2.8rem, 4.5vw, 4rem); color: var(--ivory)"
+            >
+              Plan your<br /><em class="italic">arrival</em>
+            </h2>
+
+            <div class="reveal delay-1 space-y-10">
+              <div>
+                <span class="label mb-3" style="color: var(--champagne)"
+                  >Address</span
+                >
+                <address
+                  class="font-montserrat text-sm not-italic leading-[1.9]"
+                  style="color: rgba(247, 244, 238, 0.7)"
+                >
+                  1 Meridian Drive<br />
+                  Lake Meridian, MT 59001<br />
+                  United States
+                </address>
+              </div>
+
+              <div class="grid grid-cols-2 gap-8">
+                <div>
+                  <span class="label mb-3" style="color: var(--champagne)"
+                    >Phone</span
+                  >
+                  <a
+                    href="tel:+14065550100"
+                    class="font-montserrat text-sm transition-opacity duration-300 hover:opacity-60"
+                    style="color: rgba(247, 244, 238, 0.7)"
+                    >+1 (406) 555-0100</a
+                  >
+                </div>
+                <div>
+                  <span class="label mb-3" style="color: var(--champagne)"
+                    >Email</span
+                  >
+                  <a
+                    href="mailto:reservations@themeridian.com"
+                    class="font-montserrat text-sm transition-opacity duration-300 hover:opacity-60 break-words"
+                    style="color: rgba(247, 244, 238, 0.7)"
+                    >reservations@<wbr />themeridian.com</a
+                  >
+                </div>
+              </div>
+
+              <div>
+                <span class="label mb-3" style="color: var(--champagne)"
+                  >Follow</span
+                >
+                <div class="flex items-center gap-5">
+                  <a
+                    href="#"
+                    class="font-montserrat text-xs tracking-[0.22em] uppercase transition-opacity duration-300 hover:opacity-60"
+                    style="color: rgba(247, 244, 238, 0.6)"
+                    >Instagram</a
+                  >
+                  <span style="color: rgba(247, 244, 238, 0.15)">·</span>
+                  <a
+                    href="#"
+                    class="font-montserrat text-xs tracking-[0.22em] uppercase transition-opacity duration-300 hover:opacity-60"
+                    style="color: rgba(247, 244, 238, 0.6)"
+                    >Facebook</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: form -->
+          <div class="reveal delay-2">
+            <form id="reservation-form" novalidate>
+              <div class="grid grid-cols-2 gap-6 mb-6">
+                <div>
+                  <label
+                    for="checkin"
+                    class="label mb-2"
+                    style="color: var(--champagne)"
+                    >Arrival</label
+                  >
+                  <input
+                    type="date"
+                    id="checkin"
+                    name="checkin"
+                    required
+                    class="form-input"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="checkout"
+                    class="label mb-2"
+                    style="color: var(--champagne)"
+                    >Departure</label
+                  >
+                  <input
+                    type="date"
+                    id="checkout"
+                    name="checkout"
+                    required
+                    class="form-input"
+                  />
+                </div>
+              </div>
+
+              <div class="mb-6">
+                <label
+                  for="guests"
+                  class="label mb-2"
+                  style="color: var(--champagne)"
+                  >Guests</label
+                >
+                <select
+                  id="guests"
+                  name="guests"
+                  class="form-input cursor-pointer"
+                >
+                  <option value="1">1 Guest</option>
+                  <option value="2" selected>2 Guests</option>
+                  <option value="3">3 Guests</option>
+                  <option value="4">4+ Guests</option>
+                </select>
+              </div>
+
+              <div class="mb-6">
+                <label
+                  for="suite"
+                  class="label mb-2"
+                  style="color: var(--champagne)"
+                  >Preference</label
+                >
+                <select
+                  id="suite"
+                  name="suite"
+                  class="form-input cursor-pointer"
+                >
+                  <option value="">No preference</option>
+                  <option value="lake">Lake Suite — from $680/night</option>
+                  <option value="woodland">
+                    Woodland Room — from $420/night
+                  </option>
+                  <option value="meridian">
+                    The Meridian Suite — from $1,800/night
+                  </option>
+                </select>
+              </div>
+
+              <div class="mb-6">
+                <label
+                  for="fullname"
+                  class="label mb-2"
+                  style="color: var(--champagne)"
+                  >Full Name</label
+                >
+                <input
+                  type="text"
+                  id="fullname"
+                  name="fullname"
+                  required
+                  autocomplete="name"
+                  placeholder="Your name"
+                  class="form-input"
+                />
+              </div>
+
+              <div class="mb-10">
+                <label
+                  for="email"
+                  class="label mb-2"
+                  style="color: var(--champagne)"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  autocomplete="email"
+                  placeholder="your@email.com"
+                  class="form-input"
+                />
+              </div>
+
+              <button
+                type="submit"
+                class="btn btn-champagne-on-dark w-full text-center block"
+                style="width: 100%"
+              >
+                Request Reservation
+              </button>
+            </form>
+
+            <!-- Success state -->
+            <div
+              id="form-success"
+              class="hidden text-center py-10"
+              aria-live="polite"
+            >
+              <span
+                class="divider mx-auto mb-8"
+                style="background-color: var(--champagne)"
+              ></span>
+              <p
+                class="font-cormorant text-4xl font-light italic mb-4"
+                style="color: var(--champagne)"
+              >
+                Thank you.
+              </p>
+              <p
+                class="font-montserrat text-xs leading-[1.9]"
+                style="
+                  color: rgba(247, 244, 238, 0.65);
+                  max-width: 320px;
+                  margin: 0 auto;
+                "
+              >
+                Your enquiry has been received. Our reservations team will
+                respond within 24 hours.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════════════ -->
+    <footer
+      class="py-10 px-8 md:px-14"
+      style="
+        background-color: var(--dark);
+        border-top: 1px solid rgba(216, 198, 165, 0.1);
+      "
+    >
+      <div
+        class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4"
+      >
+        <p
+          class="font-cormorant text-lg font-light tracking-[0.22em]"
+          style="color: rgba(247, 244, 238, 0.55)"
+        >
+          THE MERIDIAN
+        </p>
+        <p
+          class="font-montserrat text-xs"
+          style="color: rgba(247, 244, 238, 0.4); letter-spacing: 0.1em"
+        >
+          © 2026 The Meridian. All rights reserved.
+        </p>
+        <div class="flex gap-6">
+          <a
+            href="#"
+            class="font-montserrat text-xs tracking-widest uppercase transition-opacity hover:opacity-60 cursor-pointer"
+            style="color: rgba(247, 244, 238, 0.5)"
+            >Privacy</a
+          >
+          <a
+            href="#"
+            class="font-montserrat text-xs tracking-widest uppercase transition-opacity hover:opacity-60 cursor-pointer"
+            style="color: rgba(247, 244, 238, 0.5)"
+            >Terms</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <!-- ════════════════════════════════════════════════════════
+       SCRIPTS
+  ════════════════════════════════════════════════════════ -->
+    <script>
+      /* ─── Motion preference ──────────────────────────────── */
+      const noMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+
+      /* ─── Navbar: scroll state ───────────────────────────── */
+      const navbar = document.getElementById("navbar");
+      window.addEventListener(
+        "scroll",
+        () => {
+          navbar.classList.toggle("scrolled", window.scrollY > 70);
+        },
+        { passive: true },
+      );
+
+      /* ─── Hero: subtle parallax ──────────────────────────── */
+      if (!noMotion) {
+        const heroBg = document.getElementById("hero-bg");
+        const heroSection = document.getElementById("hero");
+        window.addEventListener(
+          "scroll",
+          () => {
+            const y = window.scrollY;
+            if (y < heroSection.offsetHeight) {
+              heroBg.style.transform = `scale(1.12) translateY(${y * 0.22}px)`;
+            }
+          },
+          { passive: true },
+        );
+      }
+
+      /* ─── Scroll reveal ──────────────────────────────────── */
+      const revealEls = document.querySelectorAll(".reveal");
+      if (noMotion) {
+        revealEls.forEach((el) => el.classList.add("visible"));
+      } else {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -32px 0px" },
+        );
+        revealEls.forEach((el) => io.observe(el));
+      }
+
+      /* ─── Mobile menu ────────────────────────────────────── */
+      const mobileMenu = document.getElementById("mobile-menu");
+      const hamburger = document.getElementById("hamburger");
+      const menuClose = document.getElementById("menu-close");
+      const mobileLinks = mobileMenu.querySelectorAll(".m-nav");
+
+      function openMenu() {
+        mobileMenu.classList.add("open");
+        mobileMenu.setAttribute("aria-hidden", "false");
+        hamburger.setAttribute("aria-expanded", "true");
+        document.body.style.overflow = "hidden";
+      }
+      function closeMenu() {
+        mobileMenu.classList.remove("open");
+        mobileMenu.setAttribute("aria-hidden", "true");
+        hamburger.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      }
+      hamburger.addEventListener("click", openMenu);
+      menuClose.addEventListener("click", closeMenu);
+      mobileLinks.forEach((l) => l.addEventListener("click", closeMenu));
+
+      /* ─── Form submission ────────────────────────────────── */
+      document
+        .getElementById("reservation-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const form = this;
+          form.style.opacity = "0";
+          form.style.transition = "opacity 500ms ease";
+          setTimeout(() => {
+            form.style.display = "none";
+            const success = document.getElementById("form-success");
+            success.classList.remove("hidden");
+            success.style.opacity = "0";
+            success.style.transition = "opacity 600ms ease";
+            requestAnimationFrame(() => {
+              success.style.opacity = "1";
+            });
+          }, 500);
+        });
+
+      /* ─── Input focus border glow ───────────────────────── */
+      document.querySelectorAll(".form-input").forEach((el) => {
+        el.addEventListener("focus", () => {
+          el.style.borderBottomColor = "rgba(216,198,165,0.75)";
+        });
+        el.addEventListener("blur", () => {
+          el.style.borderBottomColor = "rgba(216,198,165,0.25)";
+        });
+      });
+
+      /* ─── Active nav link on scroll ─────────────────────── */
+      const sections = document.querySelectorAll("section[id]");
+      const navLinkEls = document.querySelectorAll("#navbar .nav-link");
+      const sectionMap = {
+        experience: 0,
+        stay: 1,
+        amenities: 2,
+        reserve: null,
+      };
+
+      window.addEventListener(
+        "scroll",
+        () => {
+          let current = "";
+          sections.forEach((sec) => {
+            if (window.scrollY >= sec.offsetTop - 200) current = sec.id;
+          });
+          navLinkEls.forEach((link) => {
+            link.style.opacity =
+              link.getAttribute("href") === `#${current}` ? "1" : "";
+          });
+        },
+        { passive: true },
+      );
+    </script>
+  </body>
+</html>
