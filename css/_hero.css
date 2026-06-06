@@ -6,7 +6,7 @@
 .hero {
   position: relative;
   z-index: 2;
-  margin-top: 30px;
+  margin-top: 56px;
   display: flex;
   justify-content: space-between;
 }
@@ -31,14 +31,14 @@
 }
 
 .hero-copy h1 {
-  margin: 0 0 28px 0;
-  font-family: "Poppins", sans-serif;
-  font-size: clamp(58px, 6.2vw, 96px);
-  font-weight: 600;
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  max-width: 16ch;
-  text-shadow: 0 16px 30px rgba(0, 0, 0, 0.48);
+  margin: 0 0 32px 0;
+  font-family: var(--font-display);
+  font-size: clamp(62px, 7.2vw, 112px);
+  font-weight: 700;
+  line-height: 0.93;
+  letter-spacing: -0.025em;
+  max-width: 14ch;
+  text-shadow: 0 20px 40px rgba(0, 0, 0, 0.42);
 }
 
 .hero-copy h1 em {
@@ -47,15 +47,17 @@
 }
 
 .tags {
-  letter-spacing: 0.32em;
-  font-size: 11px;
+  letter-spacing: 0.38em;
+  font-size: 10px;
+  font-weight: 500;
   color: var(--ink-muted);
-  margin-bottom: 28px;
+  margin-bottom: 36px;
 }
 
 .tags span {
   letter-spacing: normal;
-  margin: 0 7px;
+  margin: 0 9px;
+  opacity: 0.5;
 }
 
 /* ── Primary CTA Button ──────────────────── */
@@ -65,40 +67,42 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
-  height: 48px;
+  height: 50px;
   border-radius: 999px;
-  padding: 0 12px 0 22px;
+  padding: 0 12px 0 24px;
   color: #f8f0ea;
-  font-size: 16px;
-  border: 1px solid rgba(255, 164, 99, 0.48);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  border: 1px solid rgba(255, 164, 99, 0.44);
   background:
     radial-gradient(
       140% 180% at 30% 0%,
-      rgba(255, 181, 120, 0.4),
+      rgba(255, 181, 120, 0.38),
       rgba(51, 33, 56, 0.6) 60%
     ),
     rgba(34, 23, 47, 0.55);
   backdrop-filter: blur(7px);
   cursor: pointer;
   transition:
-    box-shadow 0.35s ease,
-    transform 0.3s ease;
+    box-shadow 0.35s var(--ease-out),
+    transform 0.3s var(--ease-out);
   text-decoration: none;
 }
 
 .primary-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 50px rgba(255, 149, 84, 0.46);
+  box-shadow: 0 0 56px rgba(232, 134, 78, 0.42);
 }
 
 .cta-arrow {
   width: 32px;
   height: 32px;
-  border: 1px solid rgba(255, 220, 191, 0.45);
+  border: 1px solid rgba(255, 220, 191, 0.4);
   border-radius: 50%;
   display: inline-grid;
   place-items: center;
-  font-size: 18px;
+  font-size: 17px;
 }
 
 /* ── Stats Glass Panel (optional/commented) ── */

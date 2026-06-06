@@ -5,12 +5,12 @@
 
 .content-section {
   position: relative;
-  margin-top: 54px;
-  padding: 26px;
-  border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  background: #1a1530;
-  box-shadow: 0 18px 44px rgba(5, 8, 20, 0.28);
+  margin-top: 48px;
+  padding: 30px;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #161210;
+  box-shadow: 0 20px 48px rgba(5, 8, 20, 0.26);
 }
 
 .content-section:first-child {
@@ -18,16 +18,16 @@
 }
 
 .section-head h2 {
-  margin: 10px 0 0;
+  margin: 12px 0 0;
   max-width: 22ch;
-  font-family: "The Seasons Bold", serif;
-  font-size: 40px;
-  line-height: 1;
-  letter-spacing: -0.015em;
+  font-family: var(--font-display);
+  font-size: clamp(38px, 3.8vw, 60px);
+  line-height: 0.97;
+  letter-spacing: -0.02em;
 }
 
 .section-grid {
-  margin-top: 24px;
+  margin-top: 28px;
   display: grid;
   gap: 14px;
 }
@@ -42,84 +42,86 @@
 
 .content-card {
   min-height: 150px;
-  padding: 18px;
+  padding: 22px;
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: #150f28;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: #120f0c;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .content-card h3 {
   margin: 0;
-  font-family: "The Seasons Bold", serif;
-  font-size: 24px;
-  line-height: 1;
-  letter-spacing: -0.01em;
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 1.02;
+  letter-spacing: -0.015em;
 }
 
 .content-card p {
-  margin: 10px 0 0;
-  color: rgba(230, 223, 234, 0.85);
-  font-size: 14px;
-  line-height: 1.45;
+  margin: 12px 0 0;
+  color: rgba(230, 223, 234, 0.78);
+  font-size: 14.5px;
+  line-height: 1.55;
 }
 
 .content-card ul {
-  margin: 10px 0 0;
+  margin: 12px 0 0;
   padding-left: 18px;
-  color: rgba(230, 223, 234, 0.85);
-  font-size: 14px;
-  line-height: 1.45;
+  color: rgba(230, 223, 234, 0.78);
+  font-size: 14.5px;
+  line-height: 1.55;
 }
 
 .content-card li + li {
-  margin-top: 4px;
+  margin-top: 6px;
 }
 
 /* ── Contact Section ───────────────────────── */
 
 .contact-section {
-  margin-top: 44px;
-  padding: 34px 30px;
-  border-radius: 24px;
+  margin-top: 48px;
+  padding: 48px 44px;
+  border-radius: 22px;
   background:
     radial-gradient(
-      circle at 10% 0%,
-      rgba(255, 169, 109, 0.12),
-      transparent 45%
+      circle at 8% 0%,
+      rgba(232, 134, 78, 0.1),
+      transparent 48%
     ),
-    #171229;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+    #120e09;
+  border: 1px solid rgba(255, 255, 255, 0.09);
 }
 
 .contact-kicker {
   margin: 0;
-  color: rgba(247, 167, 94, 0.95);
-  font-size: 12px;
-  letter-spacing: 0.28em;
+  color: rgba(232, 134, 78, 0.9);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
 }
 
 .contact-head h2 {
-  margin: 10px 0 8px;
-  font-family: "The Seasons Bold", serif;
-  font-size: 42px;
-  line-height: 0.98;
-  letter-spacing: -0.015em;
+  margin: 14px 0 10px;
+  font-family: var(--font-display);
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: 0.97;
+  letter-spacing: -0.02em;
 }
 
 .contact-intro {
   margin: 0;
-  max-width: 50ch;
-  color: rgba(230, 223, 234, 0.82);
+  max-width: 48ch;
+  color: rgba(230, 223, 234, 0.74);
   font-size: 16px;
-  line-height: 1.45;
+  line-height: 1.6;
 }
 
 .contact-form {
-  margin-top: 22px;
+  margin-top: 32px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
+  gap: 16px;
 }
 
 .contact-form input[name="_honey"] {
@@ -133,24 +135,28 @@
 }
 
 .field span {
-  font-size: 12px;
-  letter-spacing: 0.12em;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(230, 223, 234, 0.74);
+  color: rgba(230, 223, 234, 0.62);
 }
 
 .field input,
 .field select,
 .field textarea {
   width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 12px;
-  background: rgba(11, 9, 21, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  background: rgba(10, 8, 6, 0.65);
   color: rgba(242, 238, 246, 0.96);
   font: inherit;
   font-size: 15px;
   line-height: 1.4;
-  padding: 12px 14px;
+  padding: 13px 16px;
+  transition:
+    border-color 0.22s ease,
+    background 0.22s ease;
 }
 
 .field select {
@@ -169,15 +175,16 @@
 
 .field textarea {
   resize: vertical;
-  min-height: 132px;
+  min-height: 136px;
 }
 
 .field input:focus,
 .field select:focus,
 .field textarea:focus {
-  outline: 2px solid rgba(255, 184, 124, 0.78);
+  outline: 2px solid rgba(232, 134, 78, 0.72);
   outline-offset: 1px;
-  border-color: rgba(255, 184, 124, 0.52);
+  border-color: rgba(232, 134, 78, 0.46);
+  background: rgba(12, 9, 6, 0.8);
 }
 
 .field-full {
@@ -199,17 +206,18 @@
 
 .contact-note {
   margin: 0;
-  color: rgba(230, 223, 234, 0.75);
+  color: rgba(230, 223, 234, 0.65);
   font-size: 14px;
 }
 
 .contact-note a {
-  color: rgba(255, 180, 119, 0.92);
+  color: rgba(232, 134, 78, 0.88);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .contact-note a:hover {
-  color: rgba(255, 197, 152, 1);
+  color: rgba(240, 144, 85, 1);
 }
 
 .contact-status {
@@ -217,5 +225,5 @@
   margin: 0;
   min-height: 20px;
   font-size: 14px;
-  color: rgba(247, 167, 94, 0.95);
+  color: rgba(232, 134, 78, 0.9);
 }

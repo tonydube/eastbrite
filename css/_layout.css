@@ -9,7 +9,7 @@
   min-height: 100vh;
   height: auto;
   margin: 0;
-  padding: 20px 40px 20px;
+  padding: 24px 48px 24px;
   overflow: hidden;
   border-radius: 2px;
   background: none;
@@ -31,9 +31,9 @@
   inset: -4px;
   background: url("../assets/images/backgrounds/eastbrite-hero.png") center
     58% / cover no-repeat;
-  filter: saturate(88%) brightness(72%) contrast(94%);
+  filter: saturate(82%) brightness(68%) contrast(96%);
   transform: scale(1);
-  animation: bg-slow-zoom 36s ease-out forwards;
+  animation: bg-slow-zoom 40s ease-out forwards;
   will-change: transform;
   z-index: 0;
   pointer-events: none;
@@ -45,16 +45,16 @@
   inset: 0;
   background:
     radial-gradient(
-      circle at 50% 30%,
-      rgba(12, 10, 24, 0.44) 0%,
-      rgba(12, 10, 24, 0.24) 24%,
-      rgba(12, 10, 24, 0) 48%
+      circle at 50% 28%,
+      rgba(12, 10, 24, 0.38) 0%,
+      rgba(12, 10, 24, 0.18) 24%,
+      rgba(12, 10, 24, 0) 50%
     ),
     radial-gradient(
-      ellipse at 50% 46%,
-      rgba(10, 8, 22, 0.24) 10%,
-      rgba(8, 7, 20, 0.58) 58%,
-      rgba(5, 4, 16, 0.88) 100%
+      ellipse at 50% 48%,
+      rgba(10, 8, 22, 0.2) 10%,
+      rgba(8, 7, 20, 0.56) 58%,
+      rgba(5, 4, 16, 0.9) 100%
     );
   z-index: 1;
   pointer-events: none;
@@ -78,6 +78,6 @@
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 12px 40px 34px;
-  background: #100d21;
+  padding: 16px 48px 48px;
+  background: #0d0b09;
 }

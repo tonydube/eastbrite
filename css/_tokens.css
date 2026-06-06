@@ -7,11 +7,17 @@
   --ink: #f2eef2;
   --ink-soft: rgba(241, 238, 246, 0.82);
   --ink-muted: rgba(231, 223, 230, 0.64);
-  --accent: #f1934e;
-  --accent-strong: #ff9f5f;
+  --accent: #e8864e;
+  --accent-strong: #f09055;
   --glass: rgba(31, 29, 49, 0.34);
   --glass-border: rgba(255, 255, 255, 0.16);
   --shadow-soft: 0 30px 90px rgba(5, 6, 16, 0.5);
+
+  --font-display: "The Seasons Bold", Georgia, serif;
+  --font-body: "Manrope", system-ui, sans-serif;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
 }
 
 @font-face {
@@ -30,4 +36,56 @@
       format("svg");
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
+}
+
+/* ── Scroll Reveal ───────────────────────────
+   Elements start hidden; JS adds .is-visible
+   once they enter the viewport.
+─────────────────────────────────────────────── */
+
+.work-card,
+.about-value,
+.content-card,
+.approach-card,
+.services-card {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.68s var(--ease-out),
+    transform 0.68s var(--ease-out),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.work-card.is-visible,
+.about-value.is-visible,
+.content-card.is-visible,
+.approach-card.is-visible,
+.services-card.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.work-card:nth-child(2) { transition-delay: 0.1s; }
+.work-card:nth-child(3) { transition-delay: 0.2s; }
+
+.about-value:nth-child(2) { transition-delay: 0.08s; }
+.about-value:nth-child(3) { transition-delay: 0.16s; }
+.about-value:nth-child(4) { transition-delay: 0.24s; }
+
+.services-grid .content-card:nth-child(2) { transition-delay: 0.07s; }
+.services-grid .content-card:nth-child(3) { transition-delay: 0.14s; }
+.services-grid .content-card:nth-child(4) { transition-delay: 0.21s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .work-card,
+  .about-value,
+  .content-card,
+  .approach-card,
+  .services-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

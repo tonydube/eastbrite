@@ -8,7 +8,7 @@
   flex-direction: column;
   min-height: 100vh;
   margin-top: 0;
-  padding: 34px 40px 30px;
+  padding: 48px 48px 44px;
   border: 0;
   border-radius: 0;
   box-shadow: none;
@@ -17,42 +17,45 @@
 
 .work-kicker {
   margin: 0;
-  color: rgba(247, 167, 94, 0.95);
-  font-size: 12px;
-  letter-spacing: 0.28em;
+  color: rgba(232, 134, 78, 0.9);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
 }
 
 .work-head {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .work-heading {
-  margin: 10px 0 0;
-  font-family: "The Seasons Bold", serif;
-  font-size: 40px;
-  line-height: 1;
-  letter-spacing: -0.015em;
+  margin: 14px 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(36px, 3.6vw, 54px);
+  line-height: 0.97;
+  letter-spacing: -0.022em;
 }
 
 .work-view-all {
-  color: rgba(247, 167, 94, 0.9);
-  font-size: 13px;
+  color: rgba(232, 134, 78, 0.85);
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
   white-space: nowrap;
   margin-bottom: 4px;
-  transition: opacity 0.2s;
+  transition: opacity 0.2s ease;
 }
 
 .work-view-all:hover {
-  opacity: 0.7;
+  opacity: 0.65;
 }
 
 /* ── Work Cards Grid ─────────────────────── */
@@ -62,6 +65,7 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
+  align-items: start;
 }
 
 .work-card {
@@ -69,21 +73,30 @@
   flex-direction: column;
   height: 100%;
   border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.07);
   overflow: hidden;
-  background: #13102a;
+  background: #110e0b;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.work-card:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 24px 56px rgba(5, 8, 20, 0.4);
 }
 
 /* ── Browser-Chrome Mockup Areas ─────────── */
 
 .work-mock {
-  height: clamp(220px, 18vw, 320px);
+  aspect-ratio: 16 / 10;
   overflow: hidden;
   position: relative;
 }
 
 .work-mock-link {
   display: block;
+  overflow: hidden;
 }
 
 .work-mock--fintech {
@@ -112,6 +125,13 @@
   display: block;
   object-fit: cover;
   object-position: center top;
+  transform: scale(1.04);
+  transform-origin: center top;
+  transition: transform 0.72s var(--ease-out);
+}
+
+.work-mock-link:hover .work-mock-image {
+  transform: scale(1.09);
 }
 
 /* Chrome bar */
@@ -203,7 +223,7 @@
 .mock-block--btn {
   height: 28px;
   width: 110px;
-  background: rgba(241, 147, 78, 0.38);
+  background: rgba(232, 134, 78, 0.36);
   border-radius: 6px;
 }
 
@@ -303,48 +323,49 @@
 /* ── Work Card Info Block ────────────────── */
 
 .work-info {
-  padding: 16px 20px 20px;
+  padding: 20px 22px 24px;
 }
 
 .work-tag {
   margin: 0;
-  font-size: 10px;
-  letter-spacing: 0.2em;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: rgba(237, 216, 197, 0.62);
+  color: rgba(237, 216, 197, 0.52);
 }
 
 .work-info h3 {
-  margin: 8px 0 0;
-  font-family: "The Seasons Bold", serif;
+  margin: 10px 0 0;
+  font-family: var(--font-display);
   font-size: 22px;
-  line-height: 1.05;
-  letter-spacing: -0.01em;
+  line-height: 1.04;
+  letter-spacing: -0.015em;
 }
 
 .work-info p {
-  margin: 8px 0 0;
-  font-size: 13.5px;
-  line-height: 1.45;
-  color: rgba(219, 211, 228, 0.76);
+  margin: 10px 0 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(219, 211, 228, 0.7);
 }
 
 .work-demo-link {
-  margin-top: 12px;
+  margin-top: 14px;
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: rgba(247, 167, 94, 0.95);
-  font-size: 12px;
+  color: rgba(232, 134, 78, 0.9);
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   text-decoration: none;
   transition: opacity 0.2s ease;
 }
 
 .work-demo-link:hover {
-  opacity: 0.72;
+  opacity: 0.68;
 }
 
 .work-metric {
@@ -358,8 +379,8 @@
 
 .work-metric em {
   font-style: normal;
-  font-family: "The Seasons Bold", serif;
+  font-family: var(--font-display);
   font-size: 24px;
-  color: rgba(247, 167, 94, 0.95);
+  color: rgba(232, 134, 78, 0.92);
   line-height: 1;
 }

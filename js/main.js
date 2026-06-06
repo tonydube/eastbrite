@@ -118,3 +118,34 @@ if (contactForm && contactStatus) {
     }
   });
 }
+
+/* ── Scroll Reveal ───────────────────────────
+   Adds .is-visible to cards/panels as they
+   enter the viewport.
+─────────────────────────────────────────────── */
+
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches;
+
+const revealEls = document.querySelectorAll(
+  ".work-card, .about-value, .content-card, .approach-card, .services-card"
+);
+
+if ("IntersectionObserver" in window && !prefersReducedMotion) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.08, rootMargin: "0px 0px -24px 0px" }
+  );
+
+  revealEls.forEach((el) => revealObserver.observe(el));
+} else {
+  revealEls.forEach((el) => el.classList.add("is-visible"));
+}
