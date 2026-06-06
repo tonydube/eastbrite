@@ -108,7 +108,12 @@
     padding: 12px 14px 20px;
   }
 
-.topbar {
+  .scene::before {
+    background-position: center 48%;
+    animation-duration: 24s;
+  }
+
+  .topbar {
     align-items: center;
     flex-wrap: wrap;
     gap: 0;
