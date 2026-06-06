@@ -1,3 +1,39 @@
+const heroVideo = document.getElementById("hero-video");
+const sceneContainer = document.querySelector(".scene-scroll-container");
+
+if (heroVideo && sceneContainer) {
+  const setupScrub = () => {
+    heroVideo.play().then(() => heroVideo.pause()).catch(() => {});
+
+    const scrub = () => {
+      const containerTop =
+        sceneContainer.getBoundingClientRect().top + window.scrollY;
+      const scrollRange = sceneContainer.offsetHeight - window.innerHeight;
+      const progress = Math.max(
+        0,
+        Math.min(1, (window.scrollY - containerTop) / scrollRange),
+      );
+
+      heroVideo.currentTime = progress * heroVideo.duration;
+
+      const fadeStart = 0.75;
+      heroVideo.style.opacity =
+        progress > fadeStart
+          ? String(1 - ((progress - fadeStart) / 0.25) * 0.3)
+          : "1";
+    };
+
+    window.addEventListener("scroll", scrub, { passive: true });
+    scrub();
+  };
+
+  if (heroVideo.readyState >= 1) {
+    setupScrub();
+  } else {
+    heroVideo.addEventListener("loadedmetadata", setupScrub, { once: true });
+  }
+}
+
 const menuButton = document.querySelector(".menu-btn");
 const primaryNav = document.getElementById("primary-nav");
 const pageBody = document.body;

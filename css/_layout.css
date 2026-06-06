@@ -3,11 +3,16 @@
    zoom animation and radial vignette overlay.
 ─────────────────────────────────────────────── */
 
-.scene {
+.scene-scroll-container {
   position: relative;
+  height: 200vh;
+}
+
+.scene {
+  position: sticky;
+  top: 0;
   width: 100%;
-  min-height: 100vh;
-  height: auto;
+  height: 100vh;
   margin: 0;
   padding: 20px 40px 20px;
   overflow: hidden;
@@ -25,16 +30,14 @@
   margin-right: auto;
 }
 
-.scene::before {
-  content: "";
+.hero-video {
   position: absolute;
-  inset: -4px;
-  background: url("../assets/images/backgrounds/eastbrite-hero.png") center
-    58% / cover no-repeat;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 58%;
   filter: saturate(88%) brightness(72%) contrast(94%);
-  transform: scale(1);
-  animation: bg-slow-zoom 36s ease-out forwards;
-  will-change: transform;
   z-index: 0;
   pointer-events: none;
 }
@@ -60,15 +63,6 @@
   pointer-events: none;
 }
 
-@keyframes bg-slow-zoom {
-  from {
-    transform: scale(1);
-  }
-
-  to {
-    transform: scale(1.08);
-  }
-}
 
 /* ── Lower content container ─────────────────
    Wraps everything below the cinematic scene.
