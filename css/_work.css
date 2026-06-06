@@ -77,7 +77,7 @@
 /* ── Browser-Chrome Mockup Areas ─────────── */
 
 .work-mock {
-  height: 200px;
+  height: clamp(220px, 18vw, 320px);
   overflow: hidden;
   position: relative;
 }
